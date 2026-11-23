@@ -1079,7 +1079,7 @@
   <script>
   (function () {
     // URL Google Apps Script nhận đơn (khớp hệ thống SePay)
-    var ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzLVl9P2RV8SK78ejbCR6zhfySQ58Cnj75GE2SXaWL6mnfsbLyhs6A_J8h8_Xnxf-vhQg/exec";
+    var ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbyvYnuHluYU3l0ak-uA3mFJITQbgq8OlbUbWqomYXHpVLke7_gg3FyyVwO7mAwxUeY/exec";
     var SIZES = ["Tiêu chuẩn", "Bó lớn", "Hộp quà", "Mini"];
     // Tài khoản nhận tiền khớp với cấu hình SePay
     var BANK = "MBBank", ACCOUNT = "0345573574", OWNER = "NGUYEN THI KIM ANH";
@@ -1100,7 +1100,7 @@
         };
 
         var checkGoogleSheet = function () {
-          fetch(ORDER_ENDPOINT + "?action=export&token=3zp7FNmMzvs383ydY4sddsLUuR0eaR9w")
+          fetch(ORDER_ENDPOINT + "?action=export&token=sapoflower2026token")
             .then(function (r) { return r.json(); })
             .then(function (data) {
               if (data && data.orders) {
