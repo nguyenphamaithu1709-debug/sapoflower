@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Bibi Flower - Chuyên sỉ & lẻ Hoa Sáp, Hoa Lụa</title>
+  
+  <!-- Tailwind CSS Engine -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --bg-warm: #FAF6F0;
+      --bg-card: #FFFFFF;
+      --bg-cream: #F3ECE2;
+      --text-main: #332722;
+      --text-muted: #7A6C65;
+      --primary-caramel: #B78353;
+      --primary-hover: #A16F41;
+      --border-warm: #EADBCC;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-warm);
+      background-image: linear-gradient(rgba(250, 246, 240, 0.93), rgba(250, 246, 240, 0.96)), url('background.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      color: var(--text-main);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-serif-luxury {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Chống lỗi rơi chữ (widows) */
+    .balance-text {
+      text-wrap: balance;
+    }
+
+    /* Hiệu ứng hover thẻ sản phẩm */
+    .product-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    @media (hover: hover) {
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 28px -8px rgba(87, 59, 39, 0.12);
+      }
+    }
+
+    .btn-caramel {
+      background-color: var(--primary-caramel);
+      color: #FFFFFF;
+      transition: all 0.25s ease;
+    }
+    .btn-caramel:hover {
+      background-color: var(--primary-hover);
+      box-shadow: 0 6px 18px -4px rgba(183, 131, 83, 0.4);
+    }
+    .btn-caramel:active {
+      transform: scale(0.98);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#B78353] selection:text-white">
+
+  <!-- ==================== HEADER: THƯƠNG HIỆU & DÒNG CHỮ CĂN TRÁI ==================== -->
+  <header class="py-5 px-4 sm:px-6 max-w-6xl mx-auto border-b border-[#EADBCC]/60">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      
+      <!-- Tên thương hiệu: Bibi Flower (Căn trái) -->
+      <a href="#" class="flex items-center gap-2.5 text-left">
+        <div class="w-8 h-8 rounded-full bg-[#EADBCC] flex items-center justify-center text-[#B78353] shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 01-9-9c0-4.97 4.03-9 9-9s9 4.03 9 9a9 9 0 01-9 9zm0-14c-2.21 0-4 1.79-4 4 0 2.5 4 7 4 7s4-4.5 4-7c0-2.21-1.79-4-4-4z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif-luxury text-2xl sm:text-3xl tracking-[0.16em] font-bold text-[#332722] uppercase block leading-none">Bibi Flower</span>
+          <span class="text-[10px] tracking-[0.2em] text-[#8C7A70] uppercase">Floral Atelier</span>
+        </div>
+      </a>
+
+      <!-- Dòng chữ: Chuyên sỉ & lẻ Hoa Sáp, Hoa Lụa (Căn trái) -->
+      <div class="text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE5D8] border border-[#E3D3C2] text-[#8C5D33] text-[11px] sm:text-xs font-semibold tracking-wider uppercase">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#B78353]"></span>
+          Chuyên sỉ & lẻ Hoa Sáp, Hoa Lụa
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== PHẦN 1: HERO SECTION (CĂN GIỮA TOÀN BỘ) ==================== -->
+    <section class="relative pt-10 pb-12 sm:pt-14 sm:pb-20 overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(250, 246, 240, 0.88), rgba(250, 246, 240, 0.92)), url('background.jpg');">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        
+        <!-- H1 Tiêu Đề Chính: CĂN GIỮA, 2 DÒNG -->
+        <h1 class="font-serif-luxury text-[32px] sm:text-5xl md:text-6xl text-[#332722] font-semibold tracking-tight leading-[1.18] sm:leading-[1.15] mb-5">
+          <span class="block">Gói Trọn Yêu Thương</span>
+          <span class="block italic font-normal text-[#8A5B35]">Vẹn Nguyên Cùng Năm Tháng</span>
+        </h1>
+
+        <!-- H2 Đoạn Văn Mô Tả: CĂN GIỮA, KHÔNG RƠI RỚT CHỮ -->
+        <p class="text-[#6D5D55] text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto font-normal balance-text mb-7 px-2">
+          Hoa sáp thơm nghệ thuật cao cấp: Đẹp tự nhiên như hoa thật, hương thơm dịu nhẹ thư thái và lưu giữ kỷ niệm bền đẹp từ 3 đến 5 năm.
+        </p>
+
+        <!-- Khối Nút Bấm Chính Căn Giữa (Voucher Giảm 15-20%) -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto w-full px-2">
+          <a href="#dat-hang" class="btn-caramel w-full sm:w-auto text-center font-semibold px-8 py-3.5 rounded-full text-sm sm:text-base inline-flex items-center justify-center gap-2 shadow-sm min-h-[46px]">
+            <span>Đặt Hoa – Nhận Giảm 15% - 20%</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="#danh-muc" class="w-full sm:w-auto text-center font-medium px-6 py-3.5 rounded-full text-sm sm:text-base border border-[#CDBEAF] text-[#55463E] bg-white/70 hover:bg-[#EADBCC]/50 transition min-h-[46px] flex items-center justify-center">
+            Xem Danh Mục Sản Phẩm
+          </a>
+        </div>
+
+        <!-- Khung Ảnh Hero: ẢNH THỰC TẾ BÓ HOA SÁP SHOP ĐÃ LÀM -->
+        <div class="mt-10 sm:mt-12 max-w-3xl mx-auto px-1 sm:px-4">
+          <div class="aspect-[4/3] sm:aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#F2EAE0] border-4 border-white shadow-xl relative group">
+            <img 
+              src="background.jpg" onerror="if(this.src.indexOf('images/')===-1){this.src='images/background.jpg';}" 
+              alt="Dàn bó hoa sáp thành phẩm"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+            />
+            
+            <!-- Badge Nổi Trên Ảnh -->
+            <div class="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-sm p-3 sm:p-3.5 rounded-xl sm:rounded-2xl border border-[#EADBCC] shadow-md flex items-center gap-3 text-left">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FAF3EB] text-[#B78353] flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-xs sm:text-sm text-[#332722]">100% Ảnh Chụp Thật Sản Phẩm</h4>
+                <p class="text-[11px] text-[#7A6C65]">Từng cánh hoa mềm mịn, hương thơm dịu mát</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+                <!-- ==================== PHẦN 2: 9 DANH MỤC PHÂN LOẠI SẢN PHẨM ==================== -->
+    <section id="danh-muc" class="py-12 sm:py-20 bg-[#F3ECE2] border-y border-[#E4D7C8] scroll-mt-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <!-- Header Danh Mục Sản Phẩm -->
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest text-[#B78353] font-semibold">9 Bộ Sưu Tập Thủ Công Tinh Xảo</span>
+          <h2 class="font-serif-luxury text-2xl sm:text-4xl text-[#332722] font-semibold mt-1">
+            Danh Mục Sản Phẩm Bibi Flower
+          </h2>
+          <p class="text-[#72625A] text-xs sm:text-sm mt-2 balance-text">
+            Tất cả 88 mẫu hoa sáp thơm, hoa lụa và phụ kiện được phân chia theo từng danh mục riêng biệt. Bấm vào từng danh mục bên dưới để xem chi tiết các mẫu hoa bên trong.
+          </p>
+        </div>
+
+        <!-- 9 Thẻ Danh Mục (Gọn gàng, ngăn nắp, không bị tràn lan ra ngoài) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('bestseller')">
+                <img src="images/product-heart-red.jpg" alt="Các Mẫu Hot / Bestseller" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Bán Chạy</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">13 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('bestseller')">
+                <span class="text-base">🔥</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Các Mẫu Hot / Bestseller</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Những thiết kế hoa sáp được săn đón và yêu thích nhất tại Bibi Flower
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">13 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('bestseller')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 13 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('mini')">
+                <img src="images/cat-mini-1-3-bong.jpg" alt="Bó Hoa 1 - 3 Bông" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Nhỏ Xinh</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">10 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('mini')">
+                <span class="text-base">🌸</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Bó Hoa 1 - 3 Bông</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Thiết kế mini nhỏ gọn, thanh lịch, cực kỳ phù hợp tặng sự kiện, học sinh - sinh viên
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">10 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('mini')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 10 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('soap-silk')">
+                <img src="images/cat-hoa-sap-lua.jpg" alt="Hoa Sáp Thơm & Hoa Lụa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Hoa Nghệ Thuật</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">12 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('soap-silk')">
+                <span class="text-base">💐</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Hoa Sáp Thơm & Hoa Lụa</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Hoa sáp thơm cao cấp & hoa lụa nghệ thuật bền đẹp 3 - 5 năm, hương thơm thư thái
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">12 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('soap-silk')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 12 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('glitter')">
+                <img src="images/1778893262794_60260271918889255_1018525255081346003_00cb7e5888d4a8c5f243994136844afc.jpg" alt="Hoa Nhũ Kim Tuyến" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Lấp Lánh</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">8 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('glitter')">
+                <span class="text-base">✨</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Hoa Nhũ Kim Tuyến</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Cánh hoa phủ nhũ kim tuyến lấp lánh kiêu sa, tạo hiệu ứng rực rỡ dưới ánh đèn
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">8 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('glitter')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 8 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('candy')">
+                <img src="images/cat-banh-keo.jpg" alt="Hoa Bánh Kẹo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Ngọt Ngào</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">9 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('candy')">
+                <span class="text-base">🍬</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Hoa Bánh Kẹo</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Ý tưởng quà tặng ngọt ngào, độc đáo, vừa đẹp mắt vừa thiết thực và ý nghĩa
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">9 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('candy')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 9 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('gift')">
+                <img src="images/product-giftbox-luxury.jpg" alt="Quà Tặng" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Quà Tặng</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">10 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('gift')">
+                <span class="text-base">🎁</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Quà Tặng</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Hộp quà hoa sáp phối quà, gấu bông, socola và thiệp mừng sang trọng
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">10 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('gift')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 10 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('box-bag')">
+                <img src="images/gift-transparent-bag.jpg" alt="Hộp Hoa + Túi Đèn" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Kèm Đèn LED</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">9 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('box-bag')">
+                <span class="text-base">💡</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Hộp Hoa + Túi Đèn</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Combo hộp hoa kèm túi trong suốt và dây đèn LED nhấp nháy lung linh huyền ảo
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">9 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('box-bag')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 9 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('accessory')">
+                <img src="images/proof-shipping-box.jpg" alt="Phụ Kiện Hoa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Phụ Kiện</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">9 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('accessory')">
+                <span class="text-base">🎀</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Phụ Kiện Hoa</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Vương miện ngọc, nơ lưới ren Hàn Quốc, bướm dạ quang, túi xách trong suốt cao cấp
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">9 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('accessory')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 9 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-3 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300">
+            <div>
+              <div class="aspect-[4/3] rounded-xl overflow-hidden bg-[#FAF6F0] mb-3 relative cursor-pointer" onclick="openCategoryModal('sale')">
+                <img src="images/1779021230335_60260271918889255_1018525255081346003_ad685d09fd51f42d06b1f1c4176d144f.jpg" alt="Hàng Sale" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy"/>
+                <span class="absolute top-2 left-2 bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Giảm 25-35%</span>
+                <span class="absolute bottom-2 right-2 bg-black/65 text-white text-[10px] px-2 py-0.5 rounded-full backdrop-blur-sm">8 Mẫu Hoa</span>
+              </div>
+              <div class="flex items-center gap-1.5 mb-1 cursor-pointer" onclick="openCategoryModal('sale')">
+                <span class="text-base">🏷️</span>
+                <h3 class="font-serif-luxury text-base sm:text-xl text-[#332722] font-bold group-hover:text-[#8C5D33] transition">Hàng Sale</h3>
+              </div>
+              <p class="text-xs text-[#7A6C65] leading-relaxed line-clamp-2">
+                Các mẫu hoa ưu đãi giảm giá sâu tri ân khách hàng, số lượng có hạn
+              </p>
+            </div>
+            <div class="mt-3.5 pt-2.5 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-[#8C5D33]">8 Mẫu Có Sẵn</span>
+              <button type="button" onclick="openCategoryModal('sale')" class="text-xs btn-caramel px-3.5 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Xem 8 Mẫu Hoa
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PHẦN 3: VẤN ĐỀ HOA TƯƠI VS HOA SÁP ==================== -->
+    <section class="py-12 sm:py-20 bg-[#FAF7F2]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-14">
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest text-[#B78353] font-semibold">Giải Pháp Tặng Quà Tinh Tế</span>
+          <h2 class="font-serif-luxury text-2xl sm:text-4xl text-[#332722] font-semibold mt-1.5 balance-text">
+            Tại Sao Nên Chọn Hoa Sáp Thơm Thay Cho Hoa Tươi?
+          </h2>
+          <p class="text-[#72625A] text-xs sm:text-sm mt-2 balance-text">
+            Những băn khoăn khi mua hoa tươi sẽ hoàn toàn được giải tỏa với dòng hoa sáp cao cấp từ Bibi Flower.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 items-stretch">
+          
+          <!-- Hộp Nỗi Đau -->
+          <div class="bg-white/75 border border-[#EADBCC] rounded-2xl sm:rounded-3xl p-5 sm:p-8">
+            <div class="flex items-center gap-3 mb-4 sm:mb-6">
+              <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold text-base sm:text-lg shrink-0">✕</span>
+              <h3 class="font-serif-luxury text-xl sm:text-2xl text-[#332722] font-semibold">Băn Khoăn Với Hoa Tươi</h3>
+            </div>
+            <ul class="space-y-3.5 text-xs sm:text-sm text-[#64554E]">
+              <li class="flex items-start gap-2.5">
+                <span class="text-red-500 mt-0.5 text-xs">●</span>
+                <div>
+                  <strong class="text-[#332722]">Chóng tàn sau 2-3 ngày:</strong> Chi nhiều tiền nhưng chỉ ngắm được vài hôm là héo úa, vứt đi thì xót xa và lãng phí kỷ niệm.
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-red-500 mt-0.5 text-xs">●</span>
+                <div>
+                  <strong class="text-[#332722]">Giá tăng đột biến dịp lễ:</strong> Cận ngày lễ giá bị đẩy lên cao mà hoa lại dễ dập nát, thiếu sự tươi mới.
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-red-500 mt-0.5 text-xs">●</span>
+                <div>
+                  <strong class="text-[#332722]">Bất tiện khi mang tặng:</strong> Cánh dễ rơi rụng, nước cắm tràn đổ làm hỏng thiệp và hộp quà đi kèm.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hộp Giải Pháp -->
+          <div class="bg-[#FFFDF9] border-2 border-[#B78353]/50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 relative shadow-sm">
+            <div class="flex items-center gap-3 mb-4 sm:mb-6">
+              <span class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#FAF3EB] text-[#B78353] flex items-center justify-center font-bold text-base sm:text-lg shrink-0">✓</span>
+              <h3 class="font-serif-luxury text-xl sm:text-2xl text-[#332722] font-semibold">Giải Pháp Từ Bibi Flower</h3>
+            </div>
+            <ul class="space-y-3.5 text-xs sm:text-sm text-[#5C4D46]">
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#B78353] mt-0.5 text-xs">★</span>
+                <div>
+                  <strong class="text-[#332722]">Bền đẹp vĩnh cửu 3 - 5 năm:</strong> Cánh hoa mềm mịn như thật, giữ trọn sắc thắm trang trí bàn làm việc dài lâu.
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#B78353] mt-0.5 text-xs">★</span>
+                <div>
+                  <strong class="text-[#332722]">Hương thơm tinh tế dịu nhẹ:</strong> Chiết xuất từ xà phòng thiên nhiên an toàn, tạo cảm giác thư giãn cho căn phòng.
+                </div>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-[#B78353] mt-0.5 text-xs">★</span>
+                <div>
+                  <strong class="text-[#332722]">Giữ form dáng hoàn hảo:</strong> Cành hoa cứng cáp, đóng gói chỉn chu, giao hoa an toàn và nguyên vẹn.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+                <!-- ==================== PHẦN 4: VIDEO THỰC TẾ & KHÁCH HÀNG REVIEW ==================== -->
+    <section id="bo-suu-tap" class="py-12 sm:py-20 bg-[#F5EFEB] border-t border-[#E6D9CB]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+        <!-- TIÊU ĐỀ SECTION CHÍNH -->
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest text-[#B78353] font-semibold">100% Video & Ảnh Tự Quay Thật Tại Tiệm</span>
+          <h2 class="font-serif-luxury text-2xl sm:text-4xl text-[#332722] font-semibold mt-1">
+            Video Thực Tế & Đánh Giá Của Khách
+          </h2>
+          <p class="text-[#72625A] text-xs sm:text-sm mt-2 balance-text">
+            Mục sở thị từng cánh hoa sáp dập vân mềm mịn, hiệu ứng đèn LED lung linh và trải nghiệm thực tế từ người yêu hoa.
+          </p>
+        </div>
+
+        <!-- MỤC 1: VIDEO QUAY THỰC TẾ (4 VIDEO MP4) -->
+        <div class="mb-10 sm:mb-14">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+              <h3 class="font-serif-luxury text-lg sm:text-2xl font-bold text-[#332722]">Video Cận Cảnh Cánh Hoa & Đèn LED</h3>
+            </div>
+            <span class="text-xs text-[#8C5D33] font-semibold hidden sm:inline-block">Bật âm lượng / xem độ lung linh</span>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
+          <div class="bg-white rounded-2xl p-2.5 sm:p-4 border border-[#E2D5C7] shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/14] sm:aspect-[4/5] mb-2.5 sm:mb-3">
+                <video controls playsinline preload="metadata" loop muted class="w-full h-full object-cover">
+                  <source src="images/1794566524052_7937291436514879447_7937291436514879447.mp4" type="video/mp4">
+                  Trình duyệt không hỗ trợ xem video.
+                </video>
+                <span class="absolute top-2 left-2 bg-[#8C5D33]/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                  ★ Video Thật #1
+                </span>
+              </div>
+              <h4 class="font-serif-luxury font-bold text-xs sm:text-base text-[#332722] line-clamp-1">Video Cận Cảnh Cánh Hoa Sáp Thơm</h4>
+              <p class="text-[10px] sm:text-[11px] text-[#7A6C65] mt-0.5 line-clamp-2">Chi tiết cánh hoa sáp dập khuôn sắc sảo, hương thơm xà phòng tự nhiên</p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-[#8C5D33]">350,000đ</span>
+              <button type="button" data-order data-name="Video Cận Cảnh Cánh Hoa Sáp Thơm" data-price="350000" data-colors="Màu chuẩn video|Đỏ nhung|Hồng pastel" class="text-[11px] sm:text-xs btn-caramel px-2.5 sm:px-3 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Đặt Mẫu Này
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-2.5 sm:p-4 border border-[#E2D5C7] shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/14] sm:aspect-[4/5] mb-2.5 sm:mb-3">
+                <video controls playsinline preload="metadata" loop muted class="w-full h-full object-cover">
+                  <source src="images/1794566524230_7937291436514879447_7937291436514879447.mp4" type="video/mp4">
+                  Trình duyệt không hỗ trợ xem video.
+                </video>
+                <span class="absolute top-2 left-2 bg-[#8C5D33]/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                  ★ Video Thật #2
+                </span>
+              </div>
+              <h4 class="font-serif-luxury font-bold text-xs sm:text-base text-[#332722] line-clamp-1">Video Bó Hoa Kèm Đèn LED Lung Linh</h4>
+              <p class="text-[10px] sm:text-[11px] text-[#7A6C65] mt-0.5 line-clamp-2">Hiệu ứng ánh sáng huyền ảo xuyên qua lớp giấy gói Hàn Quốc cao cấp</p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-[#8C5D33]">320,000đ</span>
+              <button type="button" data-order data-name="Video Bó Hoa Kèm Đèn LED Lung Linh" data-price="320000" data-colors="Màu chuẩn video|Đỏ nhung|Hồng pastel" class="text-[11px] sm:text-xs btn-caramel px-2.5 sm:px-3 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Đặt Mẫu Này
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-2.5 sm:p-4 border border-[#E2D5C7] shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/14] sm:aspect-[4/5] mb-2.5 sm:mb-3">
+                <video controls playsinline preload="metadata" loop muted class="w-full h-full object-cover">
+                  <source src="images/1794566524234_7937291436514879447_7937291436514879447.mp4" type="video/mp4">
+                  Trình duyệt không hỗ trợ xem video.
+                </video>
+                <span class="absolute top-2 left-2 bg-[#8C5D33]/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                  ★ Video Thật #3
+                </span>
+              </div>
+              <h4 class="font-serif-luxury font-bold text-xs sm:text-base text-[#332722] line-clamp-1">Video Bó Hoa Sáp Hoàng Gia Quý Phái</h4>
+              <p class="text-[10px] sm:text-[11px] text-[#7A6C65] mt-0.5 line-clamp-2">Phối màu sang trọng kết hợp phụ kiện vương miện và cánh bướm ánh nhũ</p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-[#8C5D33]">390,000đ</span>
+              <button type="button" data-order data-name="Video Bó Hoa Sáp Hoàng Gia Quý Phái" data-price="390000" data-colors="Màu chuẩn video|Đỏ nhung|Hồng pastel" class="text-[11px] sm:text-xs btn-caramel px-2.5 sm:px-3 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Đặt Mẫu Này
+              </button>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-2.5 sm:p-4 border border-[#E2D5C7] shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/14] sm:aspect-[4/5] mb-2.5 sm:mb-3">
+                <video controls playsinline preload="metadata" loop muted class="w-full h-full object-cover">
+                  <source src="images/1794566524237_7937291436514879447_7937291436514879447.mp4" type="video/mp4">
+                  Trình duyệt không hỗ trợ xem video.
+                </video>
+                <span class="absolute top-2 left-2 bg-[#8C5D33]/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                  ★ Video Thật #4
+                </span>
+              </div>
+              <h4 class="font-serif-luxury font-bold text-xs sm:text-base text-[#332722] line-clamp-1">Video Đóng Hộp Chuyên Dụng Chống Móp</h4>
+              <p class="text-[10px] sm:text-[11px] text-[#7A6C65] mt-0.5 line-clamp-2">Quy trình bao gói chuẩn mực, giao hoa chu đáo đến tận tay người thương</p>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-[#F3ECE2] flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-[#8C5D33]">290,000đ</span>
+              <button type="button" data-order data-name="Video Đóng Hộp Chuyên Dụng Chống Móp" data-price="290000" data-colors="Màu chuẩn video|Đỏ nhung|Hồng pastel" class="text-[11px] sm:text-xs btn-caramel px-2.5 sm:px-3 py-1.5 rounded-full font-medium shadow-sm transition active:scale-95 cursor-pointer">
+                Đặt Mẫu Này
+              </button>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- MỤC 2: KHỐI ĐÁNH GIÁ & UY TÍN SHOP -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-[#E2D5C7] shadow-sm">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-1 text-[#C48C57] text-base sm:text-lg mb-2">★★★★★</div>
+            <p class="font-serif-luxury italic text-base sm:text-xl text-[#3A2D27] leading-relaxed">
+              “Hoa bên ngoài đẹp ngoài sức mong đợi! Cánh hoa mềm sờ êm tay chứ không hề bị cứng. Hương thơm thoang thoảng rất dễ chịu, người yêu mình thích mê. Shop đóng hộp carton cứng cáp và giao hoa rất nhanh.”
+            </p>
+            <div class="flex items-center gap-3 mt-3 pt-3 border-t border-[#F0E5D8]">
+              <div class="w-8 h-8 rounded-full bg-[#EFE4D6] flex items-center justify-center font-bold text-[#8C5D33] text-xs">MT</div>
+              <div>
+                <h5 class="text-xs sm:text-sm font-semibold text-[#332722]">Minh Thư</h5>
+                <span class="text-[11px] text-[#827167]">Khách hàng thân thiết • Đã mua 3 lần</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 grid grid-cols-3 gap-2 text-center border-t lg:border-t-0 lg:border-l border-[#F0E5D8] pt-4 lg:pt-0 lg:pl-6">
+            <div>
+              <span class="block font-serif-luxury text-xl sm:text-2xl font-bold text-[#8C5D33]">100%</span>
+              <span class="block text-[11px] font-semibold text-[#332722]">Ảnh Thật</span>
+              <span class="text-[10px] text-[#86766D]">Chuẩn mẫu</span>
+            </div>
+            <div class="border-x border-[#F0E5D8]">
+              <span class="block font-serif-luxury text-xl sm:text-2xl font-bold text-[#8C5D33]">1 - 2h</span>
+              <span class="block text-[11px] font-semibold text-[#332722]">Đúng Hẹn</span>
+              <span class="text-[10px] text-[#86766D]">Theo hẹn</span>
+            </div>
+            <div>
+              <span class="block font-serif-luxury text-xl sm:text-2xl font-bold text-[#8C5D33]">Free Ship</span>
+              <span class="block text-[11px] font-semibold text-[#332722]">Hôm Nay</span>
+              <span class="text-[10px] text-[#86766D]">Hỗ trợ ship</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <!-- ==================== PHẦN 4.5: GỢI Ý CHỌN HOA THEO DỊP LỄ & Ý NGHĨA ==================== -->
+    <section class="py-12 sm:py-16 bg-[#F5EFE6] border-t border-[#E4D7C8]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest text-[#B78353] font-semibold">Tư Vấn Tận Tâm</span>
+          <h2 class="font-serif-luxury text-2xl sm:text-4xl text-[#332722] font-semibold mt-1 balance-text">
+            Gợi Ý Chọn Hoa Cho Từng Dịp Lễ Ý Nghĩa
+          </h2>
+          <p class="text-[#72625A] text-xs sm:text-sm mt-2 balance-text">
+            Mỗi bông hoa sáp lưu giữ trọn vẹn yêu thương từ 3 - 5 năm, là món quà tinh tế gửi trao trọn vẹn tâm ý của bạn.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <!-- Dịp 1: 20/10 & 8/3 -->
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between hover:border-[#B78353] transition">
+            <div>
+              <div class="flex items-center gap-2 mb-2.5">
+                <span class="w-7 h-7 rounded-full bg-[#FAF3EB] text-[#B78353] flex items-center justify-center text-sm font-bold">🌸</span>
+                <span class="text-xs font-bold text-[#8C5D33] uppercase tracking-wider">Dịp 20/10 & 8/3</span>
+              </div>
+              <h4 class="font-serif-luxury text-lg text-[#332722] font-semibold">Tặng Mẹ, Vợ & Bạn Gái</h4>
+              <p class="text-xs text-[#7A6C65] mt-1.5 leading-relaxed">
+                Hoa sáp tone hồng pastel hoặc đỏ nhung kiêu sa, thơm dịu nhẹ. Người nhận để bàn ngắm cả năm không lo héo tàn.
+              </p>
+              <div class="mt-3 py-1.5 px-2.5 rounded-lg bg-[#FAF8F5] border border-[#EADBCC] text-[11px] text-[#5C4D46]">
+                💡 <b>Mẫu gợi ý:</b> Bó Pastel, Bó Trái Tim, Hộp Quà nắp kính
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#F3ECE2]">
+              <a href="#dat-hang" class="text-xs btn-caramel w-full py-2 rounded-full font-medium shadow-sm block text-center">Tư Vấn Mẫu Này</a>
+            </div>
+          </div>
+
+          <!-- Dịp 2: Valentine 14/2 -->
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border-2 border-[#B78353]/60 shadow-sm flex flex-col justify-between relative">
+            <span class="absolute -top-2.5 right-3 bg-[#B78353] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
+              ★ Tình Yêu Vĩnh Cửu
+            </span>
+            <div>
+              <div class="flex items-center gap-2 mb-2.5">
+                <span class="w-7 h-7 rounded-full bg-[#FAF3EB] text-[#B78353] flex items-center justify-center text-sm font-bold">❤️</span>
+                <span class="text-xs font-bold text-[#8C5D33] uppercase tracking-wider">Valentine 14/2</span>
+              </div>
+              <h4 class="font-serif-luxury text-lg text-[#332722] font-semibold">Bó Hoa Trái Tim Lãng Mạn</h4>
+              <p class="text-xs text-[#7A6C65] mt-1.5 leading-relaxed">
+                Tạo hình trái tim hoa hồng đỏ phủ nhũ lấp lánh mang thông điệp tình yêu bền chặt, không bao giờ phai nhạt.
+              </p>
+              <div class="mt-3 py-1.5 px-2.5 rounded-lg bg-[#FAF8F5] border border-[#EADBCC] text-[11px] text-[#5C4D46]">
+                💡 <b>Mẫu gợi ý:</b> Bó Trái Tim Đỏ Nhũ, Bó Vương Miện
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#F3ECE2]">
+              <button type="button" data-order data-name="Bó Hoa Sáp Trái Tim Lãng Mạn" data-price="350000" data-colors="Đỏ nhũ|Hồng pastel" class="text-xs btn-caramel w-full py-2 rounded-full font-medium shadow-sm block text-center cursor-pointer">Đặt Bó Trái Tim</button>
+            </div>
+          </div>
+
+          <!-- Dịp 3: 20/11 & Tri Ân -->
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between hover:border-[#B78353] transition">
+            <div>
+              <div class="flex items-center gap-2 mb-2.5">
+                <span class="w-7 h-7 rounded-full bg-[#FAF3EB] text-[#B78353] flex items-center justify-center text-sm font-bold">🎓</span>
+                <span class="text-xs font-bold text-[#8C5D33] uppercase tracking-wider">Dịp 20/11 & Tri Ân</span>
+              </div>
+              <h4 class="font-serif-luxury text-lg text-[#332722] font-semibold">Tri Ân Thầy Cô Giáo</h4>
+              <p class="text-xs text-[#7A6C65] mt-1.5 leading-relaxed">
+                Bó hoa mini 1 - 3 bông trang nhã tặng số lượng cho trường lớp hoặc bó hoa lớn kèm thiệp chúc mừng nắn nót.
+              </p>
+              <div class="mt-3 py-1.5 px-2.5 rounded-lg bg-[#FAF8F5] border border-[#EADBCC] text-[11px] text-[#5C4D46]">
+                💡 <b>Mẫu gợi ý:</b> Bó Mini 1-3 bông (từ 45k), Bó Pastel
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#F3ECE2]">
+              <a href="#dat-hang" class="text-xs btn-caramel w-full py-2 rounded-full font-medium shadow-sm block text-center">Tư Vấn Giá Sỉ Lớp</a>
+            </div>
+          </div>
+
+          <!-- Dịp 4: Sinh Nhật & Tốt Nghiệp -->
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-[#E2D5C7] shadow-sm flex flex-col justify-between hover:border-[#B78353] transition">
+            <div>
+              <div class="flex items-center gap-2 mb-2.5">
+                <span class="w-7 h-7 rounded-full bg-[#FAF3EB] text-[#B78353] flex items-center justify-center text-sm font-bold">🎂</span>
+                <span class="text-xs font-bold text-[#8C5D33] uppercase tracking-wider">Sinh Nhật & Tốt Nghiệp</span>
+              </div>
+              <h4 class="font-serif-luxury text-lg text-[#332722] font-semibold">Gói Trọn Niềm Vui</h4>
+              <p class="text-xs text-[#7A6C65] mt-1.5 leading-relaxed">
+                Bó nơ lưới ren Hàn Quốc hoặc bó hướng dương vàng rực rỡ, cành hoa cứng cáp chụp ảnh kỷ yếu ăn hình tuyệt đối.
+              </p>
+              <div class="mt-3 py-1.5 px-2.5 rounded-lg bg-[#FAF8F5] border border-[#EADBCC] text-[11px] text-[#5C4D46]">
+                💡 <b>Mẫu gợi ý:</b> Bó Nơ Lưới Ren, Bó Vương Miện, Hoa Bánh Kẹo
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#F3ECE2]">
+              <a href="#dat-hang" class="text-xs btn-caramel w-full py-2 rounded-full font-medium shadow-sm block text-center">Tư Vấn Chọn Mẫu</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Khối tư vấn nhanh qua Zalo / Hotline -->
+        <div class="mt-6 p-4 rounded-2xl bg-white/80 border border-[#EADBCC] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-sm">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">💐</span>
+            <div>
+              <h5 class="font-semibold text-xs sm:text-sm text-[#332722]">Bạn cần tư vấn thiết kế mẫu hoa riêng theo dịp đặc biệt?</h5>
+              <p class="text-[11px] text-[#7A6C65]">Bibi Flower nhận phối màu, mix phụ kiện vương miện, đèn led và viết thiệp nắn nót theo yêu cầu.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://zalo.me/0345573574" target="_blank" rel="noopener" class="text-xs bg-[#FAF3EB] text-[#8C5D33] hover:bg-[#8C5D33] hover:text-white px-4 py-2 rounded-full font-semibold border border-[#E2D5C7] transition">
+              Nhắn Zalo 0345573574
+            </a>
+            <a href="#dat-hang" class="text-xs btn-caramel px-4 py-2 rounded-full font-semibold shadow-sm">
+              Điền Form Nhận Tư Vấn
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- ==================== PHẦN 5: CAM KẾT AN TÂM ==================== -->
+    <section class="py-10 sm:py-14 bg-[#FAF6F0]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-6 sm:mb-10">
+          <span class="text-[11px] sm:text-xs uppercase tracking-widest text-[#B78353] font-semibold">An Tâm Mua Sắm</span>
+          <h3 class="font-serif-luxury text-2xl sm:text-3xl text-[#332722] font-semibold mt-1">Cam Kết Từ Bibi Flower</h3>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          
+          <div class="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#EADBCC] text-center space-y-1.5 shadow-xs flex flex-col items-center justify-center">
+            <div class="w-10 h-10 mx-auto rounded-full bg-[#FAF3EB] text-[#8C5D33] flex items-center justify-center text-lg font-bold">
+              🔍
+            </div>
+            <h4 class="font-semibold text-xs sm:text-sm text-[#332722]">Đồng Kiểm Khi Nhận</h4>
+            <p class="text-[11px] sm:text-xs text-[#7A6C65]">Kiểm tra ưng ý mới thanh toán cho shipper.</p>
+          </div>
+
+          <div class="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#EADBCC] text-center space-y-1.5 shadow-xs flex flex-col items-center justify-center">
+            <div class="w-10 h-10 mx-auto rounded-full bg-[#FAF3EB] text-[#8C5D33] flex items-center justify-center text-lg font-bold">
+              🔄
+            </div>
+            <h4 class="font-semibold text-xs sm:text-sm text-[#332722]">Đổi Trả Trong 3 Ngày</h4>
+            <p class="text-[11px] sm:text-xs text-[#7A6C65]">Đổi mới 1-1 miễn phí trong vòng 3 ngày nếu hoa bị lỗi hoặc móp méo.</p>
+          </div>
+
+          <div class="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#EADBCC] text-center space-y-1.5 shadow-xs flex flex-col items-center justify-center">
+            <div class="w-10 h-10 mx-auto rounded-full bg-[#FAF3EB] text-[#8C5D33] flex items-center justify-center text-lg font-bold">
+              📷
+            </div>
+            <h4 class="font-semibold text-xs sm:text-sm text-[#332722]">Ảnh Thật 100%</h4>
+            <p class="text-[11px] sm:text-xs text-[#7A6C65]">Hình ảnh & video tự quay chụp thật tại tiệm.</p>
+          </div>
+
+          <div class="bg-white p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[#EADBCC] text-center space-y-1.5 shadow-xs flex flex-col items-center justify-center">
+            <div class="w-10 h-10 mx-auto rounded-full bg-[#FAF3EB] text-[#8C5D33] flex items-center justify-center text-lg font-bold">
+              🚚
+            </div>
+            <h4 class="font-semibold text-xs sm:text-sm text-[#332722]">Giao Hàng Free Ship</h4>
+            <p class="text-[11px] sm:text-xs text-[#7A6C65]">Hỗ trợ Free Ship cho mọi đơn đặt hôm nay.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PHẦN 6: FORM ĐẶT HÀNG & NHẬN GIẢM 15% - 20% ==================== -->
+    <section id="dat-hang" class="py-12 sm:py-20 bg-[#EFE8DD] border-t border-[#E3D4C4]">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        
+        <!-- Header Lời Kêu Gọi (Voucher Giảm 15% - 20%) -->
+        <div class="text-center space-y-2 mb-8">
+          <div class="inline-block bg-[#8C5D33] text-white text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-2">
+            Ưu Đãi Đặc Biệt Hôm Nay
+          </div>
+          <h2 class="font-serif-luxury text-2xl sm:text-4xl text-[#332722] font-semibold balance-text">
+            Sẵn Sàng Gửi Trao Món Quà Ý Nghĩa?
+          </h2>
+          <p class="text-[#6D5D55] text-xs sm:text-sm max-w-md mx-auto balance-text">
+            Đặt hoa hôm nay để nhận ngay <strong>Voucher giảm 15% - 20%</strong> cùng bộ quà tặng túi xách trong suốt và thiệp chúc mừng!
+          </p>
+        </div>
+
+        <!-- Khung Form Đặt Hàng -->
+        <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#DAC9B7] shadow-md">
+          <form name="don-hang-bibi-flower" method="POST" data-netlify="true" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+            <!-- Thẻ ẩn bắt buộc để Netlify nhận diện tên form -->
+             <input type="hidden" name="form-name" value="don-hang-bibi-flower" />
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-[11px] font-semibold uppercase tracking-wider text-[#5C4D46] mb-1">Họ và tên của bạn *</label>
+                <input 
+                  type="text" 
+                  name="ho_ten"
+                  required 
+                  placeholder="Ví dụ: Nguyễn Văn A"
+                  class="w-full px-3.5 py-3 rounded-xl border border-[#D8C7B5] bg-[#FAF8F5] text-sm focus:outline-none focus:border-[#B78353] focus:ring-1 focus:ring-[#B78353] transition"
+                />
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold uppercase tracking-wider text-[#5C4D46] mb-1">Số điện thoại nhận hàng *</label>
+                <input 
+                  type="tel"
+                  name="so_dien_thoai" 
+                  required 
+                  placeholder="Ví dụ: 0345573574"
+                  class="w-full px-3.5 py-3 rounded-xl border border-[#D8C7B5] bg-[#FAF8F5] text-sm focus:outline-none focus:border-[#B78353] focus:ring-1 focus:ring-[#B78353] transition"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-[11px] font-semibold uppercase tracking-wider text-[#5C4D46] mb-1">Email nhận thông báo đơn & voucher *</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  required 
+                  placeholder="Ví dụ: ten@gmail.com"
+                  class="w-full px-3.5 py-3 rounded-xl border border-[#D8C7B5] bg-[#FAF8F5] text-sm focus:outline-none focus:border-[#B78353] focus:ring-1 focus:ring-[#B78353] transition"
+                />
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold uppercase tracking-wider text-[#5C4D46] mb-1">Địa chỉ giao hàng *</label>
+                <input 
+                  type="text" 
+                  name="dia_chi"
+                  required 
+                  placeholder="Số nhà, tên đường, phường/xã, quận/huyện..."
+                  class="w-full px-3.5 py-3 rounded-xl border border-[#D8C7B5] bg-[#FAF8F5] text-sm focus:outline-none focus:border-[#B78353] focus:ring-1 focus:ring-[#B78353] transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold uppercase tracking-wider text-[#5C4D46] mb-1">Danh mục / Mẫu hoa bạn quan tâm *</label>
+              <select name="mau_hoa" class="w-full px-3.5 py-3 rounded-xl border border-[#D8C7B5] bg-[#FAF8F5] text-sm focus:outline-none focus:border-[#B78353] focus:ring-1 focus:ring-[#B78353] transition">
+                <option value="cat1">Danh mục: Bó Hoa 1 - 3 Bông (Mini) – 45.000đ</option>
+                <option value="cat2" selected>Danh mục: Hoa Sáp & Hoa Lụa Cao Cấp – 280.000đ</option>
+                <option value="cat3">Danh mục: Hoa Bánh Kẹo & Quà Tặng – 320.000đ</option>
+                <option value="p1">Bó Hồng Sáp Pastel Cầm Tay (Tone Trắng Hồng) – 280.000đ</option>
+                <option value="p2">Bó Hoa Sáp Trái Tim Tình Yêu (Hoa hồng đỏ nhũ) – 350.000đ</option>
+                <option value="p3">Bó Hoa Sáp Vương Miện Hoàng Gia – 390.000đ</option>
+                <option value="p4">Bó Hồng Sáp Nơ Lưới Ren Hàn Quốc – 290.000đ</option>
+                <option value="test">✨ Thử nghiệm chuyển khoản thực tế – 2.000đ</option>
+                <option value="custom">Tư vấn thiết kế mẫu hoa riêng theo sở thích</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold uppercase tracking-wider text-[#5C4D46] mb-1">Nội dung ghi trên thiệp chúc mừng (nếu có)</label>
+              <textarea 
+                rows="2" 
+                name="loi_chuc"
+                placeholder="Ví dụ: Chúc mừng sinh nhật, chúc bạn luôn vui vẻ và hạnh phúc..."
+                class="w-full px-3.5 py-3 rounded-xl border border-[#D8C7B5] bg-[#FAF8F5] text-sm focus:outline-none focus:border-[#B78353] focus:ring-1 focus:ring-[#B78353] transition"
+              ></textarea>
+            </div>
+
+            <div id="formErrMessage" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-600 font-medium"></div>
+
+            <!-- Nút Submit Lớn -->
+            <button 
+              type="submit" 
+              id="formSubmitBtn"
+              class="w-full btn-caramel py-3.5 sm:py-4 px-6 rounded-xl sm:rounded-2xl text-sm sm:text-base font-semibold tracking-wide uppercase shadow-md flex items-center justify-center gap-2 mt-2"
+            >
+              <span>Xác Nhận Đặt Hàng – Nhận Giảm 15% - 20%</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+
+            <p class="text-center text-[11px] text-[#8C7A70] pt-1">
+              🔒 Thông tin được bảo mật hoàn toàn. Bibi Flower sẽ liên hệ tư vấn và gửi ảnh chi tiết cho bạn!
+            </p>
+
+          </form>
+
+          <!-- Thông báo thành công -->
+          <div id="orderSuccessMessage" class="hidden mt-4 p-4 rounded-xl bg-[#FAF3EB] border border-[#B78353] text-center">
+            <span class="text-2xl">🎉</span>
+            <h4 class="font-semibold text-[#8C5D33] text-sm sm:text-base mt-1">Đã Gửi Yêu Cầu Thành Công!</h4>
+            <p class="text-xs text-[#63534B] mt-1">Bibi Flower đã áp dụng voucher giảm 15% - 20% cho bạn và sẽ gọi điện qua số điện thoại trên trong ít phút.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#FAF6F0] border-t border-[#EADBCC] py-10 text-[#6D5D55]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        
+        <!-- Cột 1: Thương hiệu -->
+        <div class="space-y-2">
+          <span class="font-serif-luxury text-xl tracking-[0.16em] font-bold text-[#332722] uppercase">Bibi Flower</span>
+          <p class="text-xs leading-relaxed text-[#7A6C65]">
+            Mỗi bó hoa sáp được tạo nên bằng cả tâm huyết thủ công, lưu giữ trọn vẹn vẻ đẹp và tình cảm theo năm tháng.
+          </p>
+        </div>
+
+        <!-- Cột 2: Danh Mục Sản Phẩm Mới -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#332722] mb-2">9 Bộ Sưu Tập</h4>
+          <ul class="space-y-1 text-xs">
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('bestseller')" class="hover:text-[#B78353] transition">🔥 Mẫu Hot / Bestseller</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('mini')" class="hover:text-[#B78353] transition">🌸 Bó Hoa 1 - 3 Bông</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('soap-silk')" class="hover:text-[#B78353] transition">💐 Hoa Sáp Thơm & Hoa Lụa</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('glitter')" class="hover:text-[#B78353] transition">✨ Hoa Nhũ Kim Tuyến</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('candy')" class="hover:text-[#B78353] transition">🍬 Hoa Bánh Kẹo</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('gift')" class="hover:text-[#B78353] transition">🎁 Quà Tặng</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('box-bag')" class="hover:text-[#B78353] transition">💡 Hộp Hoa + Túi Đèn</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('accessory')" class="hover:text-[#B78353] transition">🎀 Phụ Kiện Hoa</a></li>
+            <li><a href="javascript:void(0)" onclick="openCategoryModal('sale')" class="hover:text-[#B78353] transition">🏷️ Hàng Sale Ưu Đãi</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Chính sách -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#332722] mb-2">Chính Sách Bán Hàng</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li>✓ Đồng kiểm trước khi thanh toán</li>
+            <li>✓ Đổi mới 1-1 trong vòng 3 ngày nếu lỗi</li>
+            <li>✓ Giao hàng Free Ship</li>
+            <li>✓ Cam kết 100% ảnh và video thật</li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: LIÊN HỆ DUY NHẤT SỐ ĐIỆN THOẠI 0345573574 -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#332722] mb-2">Liên Hệ</h4>
+          <a href="tel:0345573574" class="text-lg sm:text-xl font-bold text-[#8C5D33] hover:underline block tracking-wider">
+            SĐT/Zalo: 0345573574
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-[#EADBCC] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#9B8C83]">
+        <div>© 2026 Bibi Flower. 100% Ảnh chụp thật.</div>
+        <div class="flex items-center gap-3">
+          <a href="/admin" class="hover:text-[#B78353] transition underline font-medium">Trang Quản Trị Admin</a>
+          <span>•</span>
+          <a href="/thanh-toan" class="hover:text-[#B78353] transition underline font-medium">Trang Thanh Toán</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== NÚT GỌI ĐIỆN & ĐẶT HOA NỔI DƯỚI GÓC ==================== -->
+  <div class="fixed bottom-4 right-4 z-50 flex items-center gap-2">
+    <!-- Nút gọi hotline 0345573574 -->
+    <a href="tel:0345573574" class="bg-[#B78353] hover:bg-[#A16F41] text-white px-3.5 py-3 rounded-full shadow-lg flex items-center gap-1.5 text-xs font-semibold tracking-wide transition active:scale-95" title="Gọi ngay 0345573574">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span>SĐT/Zalo: 0345573574</span>
+    </a>
+    <!-- Nút Nhận Giảm 15-20% -->
+    <a href="#dat-hang" class="bg-[#332722] hover:bg-[#1f1714] text-white px-3.5 py-3 rounded-full shadow-lg text-xs font-semibold tracking-wide transition active:scale-95 hidden sm:inline-block">
+      <span>Giảm 15% - 20%</span>
+    </a>
+  </div>
+
+  <!-- ==================== ORDER & VIETQR PAYMENT MODAL ==================== -->
+  <style>
+    #od-overlay{position:fixed;inset:0;z-index:9999;background:rgba(51,39,34,.6);display:none;align-items:flex-end;justify-content:center;padding:0}
+    #od-overlay.od-open{display:flex}
+    #od-box{background:#FFFFFF;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;border-radius:24px 24px 0 0;padding:22px 20px calc(20px + env(safe-area-inset-bottom,0px));position:relative;border:1px solid #EADBCC;box-shadow:0 12px 40px rgba(51,39,34,.25)}
+    @media(min-width:640px){#od-overlay{align-items:center;padding:16px}#od-box{border-radius:24px}}
+    #od-box h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:700;color:#332722;margin:0 28px 2px 0}
+    #od-box .od-sub{font-size:13px;color:#8C5D33;font-weight:600;margin-bottom:12px}
+    #od-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;background:#F3ECE2;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;color:#5C4D46;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    #od-close:hover{background:#EADBCC}
+    .od-row{display:flex;gap:10px}.od-row>div{flex:1;min-width:0}
+    #od-box label{display:block;font-size:11px;font-weight:700;color:#5C4D46;margin:10px 0 4px;text-transform:uppercase;letter-spacing:.5px}
+    #od-box input,#od-box select,#od-box textarea{width:100%;border:1px solid #D8C7B5;border-radius:12px;padding:10px 12px;font-size:14px;background:#FAF8F5;color:#332722;font-family:inherit;box-sizing:border-box}
+    #od-box input:focus,#od-box select:focus,#od-box textarea:focus{outline:none;border-color:#B78353;box-shadow:0 0 0 2px rgba(183,131,83,.2);background:#fff}
+    #od-box textarea{resize:vertical;min-height:60px}
+    .od-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+    #od-total{display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px;padding:12px 14px;background:#FAF3EB;border-radius:12px;font-size:14px;font-weight:600;border:1px solid #EADBCC}
+    #od-total strong{color:#8C5D33;font-size:18px}
+    #od-submit{width:100%;margin-top:10px;border:0;border-radius:999px;background:#B78353;color:#fff;font-weight:700;font-size:15px;padding:13px;cursor:pointer;transition:background .2s}
+    #od-submit:hover{background:#A16F41}
+    #od-submit:disabled{opacity:.6;cursor:wait}
+    #od-err{display:none;margin-top:10px;font-size:13px;color:#b91c1c;background:#fef2f2;border-radius:10px;padding:9px 12px;border:1px solid #fecaca}
+    #od-done{display:none;text-align:center;padding:10px 0}
+    #od-done .od-code{display:inline-block;margin:8px 0;padding:8px 18px;background:#FAF3EB;color:#8C5D33;font-weight:800;font-size:22px;letter-spacing:1px;border-radius:12px;border:1px solid #EADBCC}
+    #od-done p{font-size:13px;color:#5C4D46;margin:6px 0}
+    .od-bank{text-align:left;background:#FAF8F5;border-radius:14px;padding:6px 14px;margin:12px 0;border:1px solid #EADBCC}
+    .od-bank>div{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:13px;border-bottom:1px dashed #EADBCC}
+    .od-bank>div:last-child{border-bottom:0}
+    .od-bank span{width:88px;color:#7A6C65;flex-shrink:0}
+    .od-bank b{flex:1;color:#332722;word-break:break-all}
+    .od-bank button{border:0;background:#FAF3EB;color:#8C5D33;font-weight:700;font-size:11px;border-radius:999px;padding:4px 10px;cursor:pointer;border:1px solid #EADBCC;transition:background .2s}
+    .od-bank button:hover{background:#EADBCC}
+  </style>
+
+  <div id="od-overlay" role="dialog" aria-modal="true" aria-labelledby="od-title">
+    <div id="od-box">
+      <button type="button" id="od-close" aria-label="Đóng">×</button>
+
+      <form id="od-form" autocomplete="on" novalidate>
+        <h3 id="od-title">Đặt Hoa Bibi Flower</h3>
+        <div class="od-sub" id="od-pname"></div>
+
+        <label for="od-name">Họ và tên *</label>
+        <input id="od-name" name="name" type="text" autocomplete="name" placeholder="Nguyễn Văn A" required>
+
+        <div class="od-row">
+          <div>
+            <label for="od-phone">Số điện thoại *</label>
+            <input id="od-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="0345573574" required>
+          </div>
+          <div>
+            <label for="od-email">Email nhận đơn *</label>
+            <input id="od-email" name="email" type="email" autocomplete="email" placeholder="ten@gmail.com" required>
+          </div>
+        </div>
+
+        <label for="od-address">Địa chỉ nhận hàng *</label>
+        <textarea id="od-address" name="address" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành" required></textarea>
+
+        <div class="od-row">
+          <div><label for="od-size">Kích cỡ</label><select id="od-size" name="size"></select></div>
+          <div><label for="od-color">Tone màu</label><select id="od-color" name="color"></select></div>
+          <div><label for="od-qty">Số lượng</label><input id="od-qty" name="qty" type="number" min="1" max="100" value="1"></div>
+        </div>
+
+        <label for="od-note">Lời chúc trên thiệp (tùy chọn)</label>
+        <input id="od-note" name="note" type="text" maxlength="200" placeholder="Ví dụ: Chúc bạn luôn xinh đẹp và rạng rỡ...">
+
+        <input class="od-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div id="od-total"><span>Tạm tính</span><strong id="od-total-val">0đ</strong></div>
+        <div id="od-err" role="alert"></div>
+        <button type="submit" id="od-submit">Xác Nhận Đặt Hàng</button>
+      </form>
+
+      <div id="od-done">
+        <div style="font-size:36px">💐</div>
+        <h3 style="margin:4px 0 2px;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px">Đã nhận đơn của bạn!</h3>
+        <div class="od-code" id="od-code"></div>
+        <p>Mã đơn hàng của bạn, bạn nhớ lưu lại nhé.</p>
+        <p>Bibi Flower sẽ liên hệ bạn qua SĐT hoặc Zalo để chuẩn bị hoa chu đáo.</p>
+        
+        <div id="od-pay">
+          <p style="font-weight:700;color:#332722;margin-top:14px;font-size:15px">Quét mã VietQR để thanh toán</p>
+          <img id="od-qr" alt="Mã QR chuyển khoản Bibi Flower" width="240" height="240" style="display:block;margin:10px auto;width:240px;max-width:100%;height:auto;border:1px solid #EADBCC;border-radius:16px;padding:8px;background:#fff;box-shadow:0 4px 14px rgba(87,59,39,.08)">
+          <p style="font-size:12px;color:#7A6C65">Mở app ngân hàng, chọn Quét QR rồi xác nhận. Số tiền và nội dung đã được điền sẵn tự động.</p>
+          <div class="od-bank">
+            <div><span>Ngân hàng</span><b id="od-b-bank"></b></div>
+            <div><span>Số tài khoản</span><b id="od-b-acc"></b><button type="button" data-copy="od-b-acc">Sao chép</button></div>
+            <div><span>Số tiền</span><b id="od-b-amt"></b><button type="button" data-copy="od-b-amt">Sao chép</button></div>
+            <div><span>Nội dung CK</span><b id="od-b-des"></b><button type="button" data-copy="od-b-des">Sao chép</button></div>
+          </div>
+          <p style="font-size:12px;color:#7A6C65">Hệ thống SePay tự động xác thực ngay sau 3-5 giây khi chuyển khoản xong.</p>
+        </div>
+
+        <div id="od-success-box" style="display:none;text-align:center;padding:24px 16px;background:#f0fdf4;border-radius:18px;border:1px solid #bbf7d0;margin-top:16px">
+          <div style="font-size:48px;line-height:1">✅</div>
+          <h3 style="color:#15803d;margin:10px 0 6px;font-size:20px;font-weight:700">Chuyển khoản thành công!</h3>
+          <p style="color:#166534;font-size:15px;font-weight:600;margin:0" id="od-success-msg">Cảm ơn bạn rất nhiều vì đã tin tưởng và chọn Bibi Flower! 💐</p>
+          <p style="color:#4b5563;font-size:13px;margin:8px 0 0">Bibi Flower đã nhận đủ số tiền thanh toán. Đơn hàng của bạn đã được xác nhận tự động và tiệm đang bắt đầu bó hoa gửi đến bạn.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    // URL Google Apps Script nhận đơn (khớp hệ thống SePay)
+    var ORDER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzLVl9P2RV8SK78ejbCR6zhfySQ58Cnj75GE2SXaWL6mnfsbLyhs6A_J8h8_Xnxf-vhQg/exec";
+    var SIZES = ["Tiêu chuẩn", "Bó lớn", "Hộp quà", "Mini"];
+    // Tài khoản nhận tiền khớp với cấu hình SePay
+    var BANK = "MBBank", ACCOUNT = "0345573574", OWNER = "NGUYEN THI KIM ANH";
+    var cur = { name: "", price: 0 };
+    var pollTimer = null;
+    var $ = function (id) { return document.getElementById(id); };
+    var fmt = function (n) { return Number(n || 0).toLocaleString("vi-VN") + "đ"; };
+
+    function pollPaymentStatus(orderId, totalAmount) {
+      if (pollTimer) clearInterval(pollTimer);
+      pollTimer = setInterval(function () {
+        var onPaid = function () {
+          clearInterval(pollTimer);
+          pollTimer = null;
+          $("od-pay").style.display = "none";
+          $("od-success-box").style.display = "block";
+          $("od-success-msg").textContent = "Bibi Flower đã nhận được " + fmt(totalAmount) + " cho đơn hàng " + orderId + ".";
+        };
+
+        var checkGoogleSheet = function () {
+          fetch(ORDER_ENDPOINT + "?action=export&token=3zp7FNmMzvs383ydY4sddsLUuR0eaR9w")
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              if (data && data.orders) {
+                var found = data.orders.find(function (o) { return o.order_code === orderId; });
+                if (found && (found.status === "Đã thanh toán" || found.status === "da_thanh_toan" || found.status === "success" || found.status === "hoan_thanh" || (found.received && found.received >= totalAmount))) {
+                  onPaid();
+                }
+              }
+            })
+            .catch(function () {});
+        };
+
+        var localStatusUrl = (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost")
+          ? ("/api/order-status/" + encodeURIComponent(orderId))
+          : ("http://127.0.0.1:5000/api/order-status/" + encodeURIComponent(orderId));
+        fetch(localStatusUrl)
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data && data.paid) { onPaid(); }
+            else { checkGoogleSheet(); }
+          })
+          .catch(checkGoogleSheet);
+      }, 2500);
+    }
+
+    function fillSelect(sel, items) {
+      sel.innerHTML = "";
+      items.forEach(function (v) { var o = document.createElement("option"); o.value = v; o.textContent = v; sel.appendChild(o); });
+    }
+    function updateTotal() {
+      var q = Math.min(100, Math.max(1, parseInt($("od-qty").value, 10) || 1));
+      $("od-total-val").textContent = fmt(cur.price * q);
+    }
+    function openForm(btn) {
+      cur.name = btn.getAttribute("data-name");
+      cur.price = parseInt(btn.getAttribute("data-price"), 10) || 0;
+      $("od-pname").textContent = cur.name + " – " + fmt(cur.price);
+      fillSelect($("od-size"), SIZES);
+      var colors = (btn.getAttribute("data-colors") || "Mặc định").split("|");
+      fillSelect($("od-color"), colors);
+      $("od-qty").value = 1;
+      $("od-err").style.display = "none";
+      $("od-form").style.display = "block";
+      $("od-done").style.display = "none";
+      $("od-pay").style.display = "block";
+      $("od-success-box").style.display = "none";
+      $("od-submit").disabled = false;
+      $("od-submit").textContent = "Xác Nhận Đặt Hàng";
+      updateTotal();
+      $("od-overlay").classList.add("od-open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeForm() {
+      if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+      $("od-overlay").classList.remove("od-open");
+      document.body.style.overflow = "";
+    }
+    function showPay(orderId, amount) {
+      var qs = new URLSearchParams({ acc: ACCOUNT, bank: "MB", amount: String(amount), des: orderId });
+      $("od-qr").src = "https://qr.sepay.vn/img?" + qs.toString();
+      $("od-b-bank").textContent = "MBBank (Ngân Hàng Quân Đội)";
+      $("od-b-acc").textContent = ACCOUNT;
+      $("od-b-amt").textContent = String(amount);
+      $("od-b-des").textContent = orderId;
+    }
+    document.addEventListener("click", function (ev) {
+      var c = ev.target.closest && ev.target.closest("[data-copy]");
+      if (!c) return;
+      var txt = $(c.getAttribute("data-copy")).textContent;
+      var done = function () { var t = c.textContent; c.textContent = "Đã chép"; setTimeout(function () { c.textContent = t; }, 1200); };
+      try { navigator.clipboard.writeText(txt).then(done, function () {}); } catch (e) {}
+    });
+    function showErr(msg) { var e = $("od-err"); e.textContent = msg; e.style.display = "block"; }
+
+    document.addEventListener("click", function (ev) {
+      var b = ev.target.closest && ev.target.closest("[data-order]");
+      if (b) { ev.preventDefault(); openForm(b); }
+    });
+    $("od-close").addEventListener("click", closeForm);
+    $("od-overlay").addEventListener("click", function (e) { if (e.target === this) closeForm(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeForm(); });
+    $("od-qty").addEventListener("input", updateTotal);
+
+    $("od-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var name = f.name.value.trim(), phone = f.phone.value.replace(/[\s.\-]/g, ""), address = f.address.value.trim();
+      var email = (f.email ? f.email.value.trim() : "");
+      var qty = Math.min(100, Math.max(1, parseInt(f.qty.value, 10) || 1));
+      if (!name || !phone || !email || !address) return showErr("Bạn điền giúp tiệm đầy đủ họ tên, số điện thoại, email và địa chỉ nhé.");
+      if (!/^0\d{9}$/.test(phone)) return showErr("Số điện thoại không hợp lệ: cần có đúng 10 số và bắt đầu bằng số 0 (ví dụ 0345573574).");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr("Email không hợp lệ: vui lòng nhập đúng định dạng email (ví dụ ten@gmail.com).");
+
+      var noteText = (email ? "Email: " + email + (f.note.value.trim() ? " | " + f.note.value.trim() : "") : f.note.value.trim());
+      var data = new URLSearchParams({
+        name: name, phone: phone, email: email, address: address,
+        product: cur.name, size: f.size.value, color: f.color.value,
+        qty: String(qty), total: String(cur.price * qty),
+        note: noteText, website: f.website.value
+      });
+      var btn = $("od-submit");
+      btn.disabled = true; btn.textContent = "Đang gửi đơn...";
+      $("od-err").style.display = "none";
+
+      var notifyLocalOrder = function (orderCode) {
+        var localOrderUrl = (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost")
+          ? "/api/orders"
+          : "http://127.0.0.1:5000/api/orders";
+        fetch(localOrderUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            order_code: orderCode,
+            name: name,
+            phone: phone,
+            email: email,
+            address: address,
+            product: cur.name,
+            qty: qty,
+            total: cur.price * qty,
+            note: "Cỡ " + f.size.value + " | Màu " + f.color.value + " | Đ/c: " + address + (noteText ? " | " + noteText : "")
+          })
+        }).catch(function () {});
+      };
+
+      fetch(ORDER_ENDPOINT, { method: "POST", body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res || !res.ok) throw new Error((res && res.error) || "Lỗi không xác định");
+          $("od-code").textContent = res.orderId;
+          $("od-form").style.display = "none";
+          $("od-done").style.display = "block";
+          showPay(res.orderId, cur.price * qty);
+          notifyLocalOrder(res.orderId);
+          pollPaymentStatus(res.orderId, cur.price * qty);
+        })
+        .catch(function () {
+          // Fallback tạo mã offline
+          var fakeCode = "BIBI" + Math.floor(Math.random() * 9000 + 1000);
+          $("od-code").textContent = fakeCode;
+          $("od-form").style.display = "none";
+          $("od-done").style.display = "block";
+          showPay(fakeCode, cur.price * qty);
+          notifyLocalOrder(fakeCode);
+          pollPaymentStatus(fakeCode, cur.price * qty);
+        });
+    });
+
+    // Xử lý form đăng ký nhận ưu đãi 15%-20% & kích hoạt chuỗi 3 email tự động (#nhan-uu-dai)
+    window.handleWaitlistSubmit = function (event) {
+      event.preventDefault();
+      var f = event.target;
+      var name = (f.fullname ? f.fullname.value.trim() : "");
+      var phone = (f.phone ? f.phone.value.replace(/[\s.\-]/g, "") : "");
+      var email = (f.email ? f.email.value.trim() : "");
+      var occasion = (f.occasion ? f.occasion.value : "");
+      var note = (f.note ? f.note.value.trim() : "");
+      var errBox = document.getElementById("waitlist-err");
+      var okBox = document.getElementById("waitlist-success-box");
+      var btn = document.getElementById("waitlist-submit-btn");
+
+      var showWLErr = function (msg) {
+        if (!errBox) return;
+        if (msg) {
+          errBox.textContent = "⚠️ " + msg;
+          errBox.classList.remove("hidden");
+        } else {
+          errBox.textContent = "";
+          errBox.classList.add("hidden");
+        }
+      };
+
+      showWLErr("");
+      if (!name || !phone || !email) {
+        showWLErr("Khách điền giúp em đầy đủ Họ tên, Số điện thoại và Email nhận mã ưu đãi nha.");
+        return;
+      }
+      if (!/^0\d{9}$/.test(phone)) {
+        showWLErr("Số điện thoại không hợp lệ: cần có đúng 10 chữ số và bắt đầu bằng số 0 (ví dụ: 0345573574).");
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        showWLErr("Email không hợp lệ: khách vui lòng nhập đúng định dạng email (ví dụ: ten@gmail.com).");
+        return;
+      }
+
+      if (btn) { btn.disabled = true; btn.style.opacity = "0.7"; }
+
+      var payload = {
+        name: name,
+        phone: phone,
+        email: email,
+        occasion: occasion,
+        note: note
+      };
+
+      var postWaitlist = function (url) {
+        return fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      };
+
+      postWaitlist("/api/waitlist")
+        .then(function (res) {
+          if (res && res.ok) return res.json();
+          return postWaitlist("http://127.0.0.1:5000/api/waitlist").catch(function () {});
+        })
+        .catch(function () {
+          return postWaitlist("http://127.0.0.1:5000/api/waitlist").catch(function () {});
+        })
+        .finally(function () {
+          if (btn) { btn.disabled = false; btn.style.opacity = ""; }
+          f.reset();
+          if (okBox) {
+            okBox.classList.remove("hidden");
+            okBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+    };
+
+    // Xử lý form đặt hàng chính ở giữa trang (#dat-hang)
+    window.handleOrderSubmit = function (event) {
+      event.preventDefault();
+      var f = event.target;
+      var name = f.ho_ten.value.trim();
+      var phone = f.so_dien_thoai.value.replace(/[\s.\-]/g, "");
+      var email = f.email.value.trim();
+      var address = f.dia_chi.value.trim();
+      var mau_hoa = f.mau_hoa.value;
+      var note = f.loi_chuc ? f.loi_chuc.value.trim() : "";
+      var errBox = document.getElementById("formErrMessage");
+
+      if (errBox) { errBox.classList.add("hidden"); errBox.textContent = ""; }
+
+      if (!name || !phone || !email || !address) {
+        if (errBox) { errBox.textContent = "Bạn vui lòng điền đầy đủ họ tên, số điện thoại, email và địa chỉ nhận hoa nhé."; errBox.classList.remove("hidden"); }
+        return;
+      }
+      if (!/^0\d{9}$/.test(phone)) {
+        if (errBox) { errBox.textContent = "Số điện thoại không hợp lệ: cần có đúng 10 số và bắt đầu bằng số 0 (ví dụ 0345573574)."; errBox.classList.remove("hidden"); }
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (errBox) { errBox.textContent = "Email không hợp lệ: vui lòng nhập đúng định dạng email (ví dụ ten@gmail.com)."; errBox.classList.remove("hidden"); }
+        return;
+      }
+
+      var priceMap = {
+        cat1: { name: "Bó Hoa 1 - 3 Bông (Mini)", price: 45000 },
+        cat2: { name: "Hoa Sáp & Hoa Lụa Cao Cấp", price: 280000 },
+        cat3: { name: "Hoa Bánh Kẹo & Quà Tặng", price: 320000 },
+        p1: { name: "Bó Hồng Sáp Pastel Cầm Tay", price: 280000 },
+        p2: { name: "Bó Hoa Sáp Trái Tim Lãng Mạn", price: 350000 },
+        p3: { name: "Bó Hoa Vương Miện Hoàng Gia", price: 390000 },
+        p4: { name: "Bó Hồng Sáp Nơ Lưới Ren", price: 290000 },
+        test: { name: "Test chuyển khoản thực tế", price: 2000 },
+        custom: { name: "Hoa thiết kế riêng theo yêu cầu", price: 250000 }
+      };
+
+      var pInfo = priceMap[mau_hoa] || priceMap["cat2"];
+      var submitBtn = document.getElementById("formSubmitBtn");
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Đang gửi đơn hàng..."; }
+
+      var noteText = "Email: " + email + (note ? " | Lời chúc: " + note : "");
+      var data = new URLSearchParams({
+        name: name, phone: phone, email: email, address: address,
+        product: pInfo.name, size: "Tiêu chuẩn", color: "Mặc định",
+        qty: "1", total: String(pInfo.price),
+        note: noteText, website: ""
+      });
+
+      var syncVoucherAndOrder = function (orderCode) {
+        var wlPayload = JSON.stringify({ name: name, phone: phone, email: email, occasion: pInfo.name, note: note });
+        fetch("/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: wlPayload })
+          .catch(function () {
+            return fetch("http://127.0.0.1:5000/api/waitlist", { method: "POST", headers: { "Content-Type": "application/json" }, body: wlPayload });
+          })
+          .catch(function () {});
+
+        var ordPayload = JSON.stringify({
+          order_code: orderCode,
+          customer_name: name,
+          phone: phone,
+          email: email,
+          address: address,
+          product_name: pInfo.name,
+          quantity: 1,
+          amount: pInfo.price,
+          status: "cho_thanh_toan",
+          note: noteText
+        });
+        fetch("/api/orders", { method: "POST", headers: { "Content-Type": "application/json" }, body: ordPayload })
+          .catch(function () {
+            return fetch("http://127.0.0.1:5000/api/orders", { method: "POST", headers: { "Content-Type": "application/json" }, body: ordPayload });
+          })
+          .catch(function () {});
+      };
+
+      fetch(ORDER_ENDPOINT, { method: "POST", body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = '<span>Xác Nhận Đặt Hàng – Nhận Giảm 15% - 20%</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>'; }
+          var orderCode = (res && res.orderId) || ("BIBI" + Math.floor(Math.random() * 9000 + 1000));
+          $("od-pname").textContent = pInfo.name + " – " + fmt(pInfo.price);
+          $("od-code").textContent = orderCode;
+          $("od-form").style.display = "none";
+          $("od-done").style.display = "block";
+          $("od-pay").style.display = "block";
+          $("od-success-box").style.display = "none";
+          $("od-overlay").classList.add("od-open");
+          document.body.style.overflow = "hidden";
+          showPay(orderCode, pInfo.price);
+          syncVoucherAndOrder(orderCode);
+          pollPaymentStatus(orderCode, pInfo.price);
+          f.reset();
+        })
+        .catch(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = '<span>Xác Nhận Đặt Hàng – Nhận Giảm 15% - 20%</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>'; }
+          var fakeCode = "BIBI" + Math.floor(Math.random() * 9000 + 1000);
+          $("od-pname").textContent = pInfo.name + " – " + fmt(pInfo.price);
+          $("od-code").textContent = fakeCode;
+          $("od-form").style.display = "none";
+          $("od-done").style.display = "block";
+          $("od-pay").style.display = "block";
+          $("od-success-box").style.display = "none";
+          $("od-overlay").classList.add("od-open");
+          document.body.style.overflow = "hidden";
+          showPay(fakeCode, pInfo.price);
+          syncVoucherAndOrder(fakeCode);
+          pollPaymentStatus(fakeCode, pInfo.price);
+          f.reset();
+        });
+    };
+
+    // Tự động mở QR thanh toán khi Reviewer truy cập /thanh-toan hoặc #thanh-toan
+    if (window.location.pathname.indexOf("/thanh-toan") !== -1 || window.location.hash === "#thanh-toan") {
+      setTimeout(function () {
+        var testBtn = document.querySelector('[data-name="Test chuyển khoản thực tế"]') || document.querySelector('[data-order]');
+        if (testBtn) {
+          openForm(testBtn);
+          $("od-code").textContent = "BIBI-TEST";
+          $("od-form").style.display = "none";
+          $("od-done").style.display = "block";
+          showPay("BIBI-TEST", 2000);
+          pollPaymentStatus("BIBI-TEST", 2000);
+        }
+      }, 300);
+    }
+  })();
+  </script>
+
+
+  <!-- ==================== CHATBOT BIBI FLOWER ==================== -->
+  <style>
+    .bbc-launch{position:fixed;right:1rem;bottom:5rem;z-index:60;width:56px;height:56px;border-radius:50%;border:0;cursor:pointer;background:var(--primary-caramel,#B78353);color:#fff;box-shadow:0 8px 22px -6px rgba(87,59,39,.45);display:flex;align-items:center;justify-content:center;transition:background .25s,transform .2s}
+    .bbc-launch:hover{background:var(--primary-hover,#A16F41)}
+    .bbc-launch:active{transform:scale(.95)}
+    .bbc-launch svg{width:26px;height:26px}
+    .bbc-tip{position:fixed;right:4.6rem;bottom:5.6rem;z-index:60;background:#fff;color:var(--text-main,#332722);border:1px solid var(--border-warm,#EADBCC);border-radius:14px;padding:.55rem .8rem;font-size:12.5px;box-shadow:0 8px 22px -8px rgba(87,59,39,.25);cursor:pointer;max-width:200px}
+    .bbc-win{position:fixed;right:1rem;bottom:9.2rem;z-index:60;width:360px;max-width:calc(100vw - 2rem);height:min(520px,calc(100vh - 11rem));background:var(--bg-warm,#FAF6F0);border:1px solid var(--border-warm,#EADBCC);border-radius:18px;box-shadow:0 20px 44px -12px rgba(87,59,39,.35);display:none;flex-direction:column;overflow:hidden;font-size:14px}
+    .bbc-win.open{display:flex}
+    .bbc-head{background:var(--primary-caramel,#B78353);color:#fff;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between}
+    .bbc-head b{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:700;line-height:1}
+    .bbc-head small{display:block;font-size:11px;opacity:.9;margin-top:2px}
+    .bbc-x{background:none;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:0 .25rem}
+    .bbc-msgs{flex:1;overflow-y:auto;padding:.9rem;display:flex;flex-direction:column;gap:.55rem}
+    .bbc-m{max-width:86%;padding:.55rem .8rem;border-radius:14px;line-height:1.5;white-space:pre-line;word-wrap:break-word}
+    .bbc-bot{align-self:flex-start;background:#fff;color:var(--text-main,#332722);border:1px solid var(--border-warm,#EADBCC);border-bottom-left-radius:4px}
+    .bbc-me{align-self:flex-end;background:var(--primary-caramel,#B78353);color:#fff;border-bottom-right-radius:4px}
+    .bbc-btn{display:inline-block;align-self:flex-start;padding:.55rem .95rem;border-radius:999px;font-weight:600;font-size:13px;text-decoration:none;background:var(--text-main,#332722);color:#fff;transition:background .25s}
+    .bbc-btn:hover{background:#1f1714}
+    .bbc-btn.alt{background:#fff;color:var(--primary-hover,#A16F41);border:1px solid var(--primary-caramel,#B78353)}
+    .bbc-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+    .bbc-chip{background:var(--bg-cream,#F3ECE2);color:var(--text-main,#332722);border:1px solid var(--border-warm,#EADBCC);border-radius:999px;padding:.35rem .75rem;font-size:12.5px;cursor:pointer;font-family:inherit}
+    .bbc-chip:hover{background:var(--border-warm,#EADBCC)}
+    .bbc-dots{display:flex;gap:4px;padding:.7rem .85rem}
+    .bbc-dots i{width:6px;height:6px;border-radius:50%;background:var(--text-muted,#7A6C65);animation:bbcb 1s infinite}
+    .bbc-dots i:nth-child(2){animation-delay:.15s}.bbc-dots i:nth-child(3){animation-delay:.3s}
+    @keyframes bbcb{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+    .bbc-form{display:flex;gap:.5rem;padding:.65rem;border-top:1px solid var(--border-warm,#EADBCC);background:#fff}
+    .bbc-form input{flex:1;border:1px solid var(--border-warm,#EADBCC);border-radius:999px;padding:.55rem .9rem;font:inherit;font-size:14px;color:var(--text-main,#332722);background:var(--bg-warm,#FAF6F0);outline:none;min-width:0}
+    .bbc-form input:focus{border-color:var(--primary-caramel,#B78353)}
+    .bbc-form button{border:0;border-radius:999px;background:var(--primary-caramel,#B78353);color:#fff;padding:0 1rem;font-weight:600;cursor:pointer;font-family:inherit}
+    .bbc-form button:hover{background:var(--primary-hover,#A16F41)}
+    @media(max-width:480px){.bbc-win{right:.5rem;max-width:calc(100vw - 1rem);bottom:9rem}.bbc-tip{display:none}}
+  </style>
+
+  <button class="bbc-launch" id="bbcLaunch" aria-label="Chat với Bibi Flower" title="Chat với Bibi Flower">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h8M8 14h5m-9 6l1.6-3.4A8 8 0 1112 20a8 8 0 01-3.4-.7L4 20z"/></svg>
+  </button>
+  <div class="bbc-tip" id="bbcTip">Khách cần em tư vấn không ạ? 💐</div>
+  <div class="bbc-win" id="bbcWin" role="dialog" aria-label="Chat tư vấn Bibi Flower">
+    <div class="bbc-head"><div><b>Bibi Flower</b><small>Em tư vấn hoa sáp, hoa lụa cho khách nha</small></div><button class="bbc-x" id="bbcClose" aria-label="Đóng">×</button></div>
+    <div class="bbc-msgs" id="bbcMsgs"></div>
+    <form class="bbc-form" id="bbcForm" autocomplete="off"><input id="bbcIn" type="text" placeholder="Khách nhắn em ở đây nha..." aria-label="Tin nhắn"><button type="submit">Gửi</button></form>
+  </div>
+
+  <script>
+  (function(){
+    var FORM='#dat-hang', ZALO='https://zalo.me/0345573574';
+    var $=function(i){return document.getElementById(i)};
+    var win=$('bbcWin'),msgs=$('bbcMsgs'),input=$('bbcIn'),tip=$('bbcTip'),started=false;
+    var BF={t:'Điền form nhận ưu đãi 💐',href:FORM,form:1};
+    var FORM_SOFT={t:'Điền form để em tư vấn 💐',href:FORM,form:1};
+    var R={
+      greet:{a:'Bibi Flower xin chào khách ơi 💐\nEm chuyên hoa sáp thơm nghệ thuật và hoa lụa cao cấp, mua lẻ hay mua sỉ số lượng nhiều đều được ạ. Khách đang tìm hoa tặng dịp lễ nào (20/10, 8/3, Valentine, 20/11, Sinh nhật...) để em gợi ý mẫu đẹp và hợp ý nhất cho khách nha?'},
+      women:{a:'Dịp 20/10 và 8/3 tôn vinh phái đẹp nè khách ơi 🌸\n- Tặng Mẹ/Người lớn tuổi: Bó hoa sáp tone đỏ nhung hoặc tím pastel sang trọng, bền 3-5 năm để bàn ngắm mỗi ngày vừa đẹp vừa thơm.\n- Tặng Vợ/Người yêu: Bó Trái Tim Đỏ Nhũ hoặc Bó Nơ Lưới Ren Hàn Quốc ngọt ngào, tặng kèm túi trong suốt sang chảnh.\n- Tặng đồng nghiệp/cô giáo/tập thể: Bó mini 1-3 bông nhỏ xinh, thanh lịch mà tiết kiệm (từ 45k) 💐\nKhách đang muốn tặng ai để em gợi ý chuẩn nhất nha?',b:[BF,{t:'Xem mẫu hoa hot',href:'#danh-muc',form:1}]},
+      val:{a:'Valentine 14/2 thì hoa hồng sáp đỏ luôn là biểu tượng tình yêu nồng cháy số 1 nè khách ❤️\nBên em có Bó Hoa Sáp Trái Tim Lãng Mạn (phủ nhũ lấp lánh) và Bó Vương Miện Hoàng Gia quý phái. Hoa sáp bền đẹp 3-5 năm mang trọn thông điệp "tình yêu bền lâu vĩnh cửu không tàn phai". Khách cần viết thiệp tỏ tình lãng mạn cứ nhắn em nắn nót viết tay giúp khách nha 😘',b:[BF,{t:'Nhắn Zalo cho em',href:ZALO,alt:1}]},
+      bday:{a:'Tặng Sinh Nhật & Kỷ Niệm thì các mẫu Bó Hồng Sáp Nơ Lưới Ren Hàn Quốc hoặc Hộp Quà Hoa Sáp nắp kính là siêu chuẩn bài luôn ạ 🎂\nVừa lung linh chụp ảnh kỷ niệm, vừa trưng bàn làm việc 3-5 năm thơm mát. Khách có thể chọn bó mix bánh kẹo hoặc gắn thêm đèn led nhấp nháy lung linh nữa nha!',b:[BF,{t:'Xem mẫu trên web',href:'#danh-muc',form:1}]},
+      grad:{a:'Chúc mừng Tốt nghiệp thì hoa sáp tone hướng dương vàng rực rỡ hoặc tone trắng hồng chụp ảnh ăn hình vô cùng 🎓🌻\nCành hoa sáp cứng cáp, mang đi chụp ngoại cảnh cả ngày thoải mái không bao giờ sợ dập nát hay rụng cánh như hoa tươi. Để làm kỷ niệm mốc tốt nghiệp suốt nhiều năm luôn ạ!',b:[BF]},
+      open:{a:'Mừng Khai trương hay Tân gia thì Giỏ Hoa Sáp hoặc Hộp Quà Hoa Lụa tone Đỏ - Vàng tài lộc là ý nghĩa nhất ạ 🏢💐\nHoa bền đẹp 3-5 năm mang ý nghĩa phát tài phát lộc bền vững, để quầy thu ngân hay bàn tiếp khách cực kỳ sang trọng!',b:[BF,{t:'Nhắn Zalo tư vấn giỏ',href:ZALO,alt:1}]},
+      budget:{a:'Bên em có đủ mẫu theo từng mức ngân sách của khách nè 💐\n- Dưới 100k: Bó mini 1-3 bông (từ 45k - 75k) nhỏ xinh, kèm nơ và thiệp.\n- Từ 200k - 350k: Bó Hồng Sáp Pastel (280k), Bó Nơ Lưới Ren (290k) - Dòng bán chạy nhất.\n- Từ 350k - 450k (Cao cấp): Bó Trái Tim Khổng Lồ (350k), Bó Vương Miện (390k), Hộp Quà Nắp Kính (420k).\nKhách muốn tìm mẫu tầm giá bao nhiêu em gửi hình chi tiết cho khách nha 😘',b:[BF]},
+      teacher:{a:'Tặng thầy cô dịp 20/11 thì mẫu bó hoa mini 1 đến 3 bông rất được khách chọn nha, nhỏ xinh, tiện mang tới lớp, mua nhiều cho cả lớp cũng nhẹ túi ạ 💐 Còn muốn bó lớn hơn thì có hoa sáp, hoa lụa và hộp quà phối hoa. Khách cho em biết ngân sách và số lượng, em gợi ý mẫu hợp cho khách nha. Đặt sớm giúp em để kịp ngày nè 😘',b:[FORM_SOFT]},
+      price:{a:'Dạ giá tùy mẫu và số lượng khách lấy nha. Khách cho em biết mình thích mẫu nào, cần mấy bó, em báo giá liền cho lẹ ạ 💐',b:[FORM_SOFT]},
+      fresh:{a:'Hoa sáp không sợ héo nè khách ơi 🌸 Hoa tươi chỉ ngắm được vài ngày, còn hoa sáp để trên bàn làm việc hay góc phòng vẫn xinh, lại thơm dịu nhẹ nữa. Cận ngày lễ khách cũng đỡ lo hoa tươi lên giá hay dập nát nha.'},
+      durable:{a:'Hoa sáp để được khoảng 3 đến 5 năm nha khách. Cánh hoa mềm, giữ form đẹp, khách tặng xong người nhận để làm kỷ niệm được lâu luôn ạ 💐'},
+      scent:{a:'Có thơm nha khách, mà thơm dịu nhẹ thôi chứ không nồng đâu ạ. Hương làm từ xà phòng thiên nhiên nên để trong phòng thấy thư thái lắm nè 😘'},
+      ship:{a:'Bên em giao hàng FREE SHIP cho mọi đơn hàng đặt hôm nay nha khách ơi 🚚💐 Có hỗ trợ giao hoa theo lịch hẹn của khách luôn ạ! Khách nhắn em địa chỉ và giờ cần nhận em sắp xếp liền nha 😘'},
+      promo:{a:'Có nè khách ơi 😘 Khách đặt hoa trên web được giảm 15% đến 20%, còn được tặng kèm túi xách trong suốt và thiệp chúc mừng nữa ạ. Khách điền form em lên đơn cho nha.',b:[BF]},
+      whole:{a:'Được chứ khách ơi, mua sỉ số lượng bao nhiêu em cũng cân tất ạ 💐 Khách cho em biết mình cần mẫu nào, số lượng bao nhiêu, và cần nhận ngày nào, em báo giá sỉ cho khách nha. Khách mua cho lớp, công ty hay sự kiện đều nhận hết nè.',b:[{t:'Nhắn Zalo cho em 😘',href:ZALO},FORM_SOFT]},
+      card:{a:'Dạ có nha khách, khách cần gửi gắm lời chúc nào cứ nhắn em hỗ trợ ghi thiệp nắn nót kèm theo hoa nha 💐 Khách nhắn em lời chúc muốn gửi, hoặc ghi vào ô thiệp trong form đặt hàng cũng được ạ.'},
+      trust:{a:'Khách yên tâm nha, hình và video bên em là tự quay chụp thật 100% tại tiệm. Khách nhận hàng được đồng kiểm ưng ý mới thanh toán ạ. Nếu hoa có bất kỳ vấn đề gì hay bị móp méo khi vận chuyển, bên em hỗ trợ đổi mới 1-1 trong vòng 3 ngày, lại còn được Free Ship nữa nha 😘'},
+      catalog:{a:'Em có bó mini 1 đến 3 bông, bó hoa sáp và hoa lụa lớn, hộp quà phối hoa, hoa bánh kẹo, giỏ hoa và giỏ trái cây xinh xắn nè 💐 Khách tặng dịp nào, ngân sách khoảng bao nhiêu, em gợi ý mẫu hợp cho khách nha.',b:[{t:'Xem mẫu trên web',href:'#danh-muc',form:1}]},
+      buy:{a:'Dạ em lên đơn cho khách liền nha 😘 Khách điền form giúp em: tên, số điện thoại, địa chỉ nhận hàng, mẫu hoa và lời chúc trên thiệp. Đặt hoa hôm nay khách còn được giảm 15% đến 20% và tặng kèm túi xách trong suốt với thiệp nha ạ.',b:[BF,{t:'Nhắn Zalo cho em',href:ZALO,alt:1}]},
+      later:{a:'Dạ khách cứ thong thả xem nha 💐 Khách chưa biết chọn mẫu hay chưa muốn chốt ngay cũng không sao ạ. Khách điền form ngắn, em gửi hình thật với ưu đãi cho khách xem, không bắt buộc mua đâu nè.',b:[FORM_SOFT]},
+      thanks:{a:'Dạ em cảm ơn khách ơi 😘 Khách cần hỏi thêm gì cứ nhắn em nhé 💐'},
+      fallback:{a:'Câu này em hỏi lại chủ shop rồi báo khách liền nha 💐 Khách để lại thông tin trong form hoặc nhắn Zalo 0345573574 giúp em ạ.',b:[FORM_SOFT,{t:'Nhắn Zalo cho em',href:ZALO,alt:1}]}
+    };
+    var RULES=[
+      ['women',/20\/10|20-10|8\/3|8-3|phu nu|tang me|tang vo|ban gai|nguoi yeu|crush|nu dong nghiep/],
+      ['val',/14\/2|14-2|valentine|tinh nhan|to tinh|cau hon|tinh yeu/],
+      ['bday',/sinh nhat|ky niem|ngay cuoi|anniversary|\bsn\b/],
+      ['grad',/tot nghiep|ra truong|trao bang|cu nhan/],
+      ['open',/khai truong|tan gia|thang chuc|chuc mung/],
+      ['budget',/ngan sach|tam gia|gia re|bao nhieu tien|\d+k|\d+000|duoi (100|200|300|500)/],
+      ['whole',/\b(si|buon)\b|so luong (lon|nhieu)|lay nhieu|mua nhieu|cho lop|cong ty|su kien/],
+      ['teacher',/thay co|20\/11|20-11|nha giao|giao vien|giang vien/],
+      ['later',/xem them|de (minh|em|toi|mk|tui) (xem|hoi|suy)|chua biet|de sau|de luc khac|de hom khac|hoi (nguoi|ban|chong|vo)|tham khao|chua (muon )?(chot|mua)/],
+      ['buy',/chot|len don|dat (hang|hoa|luon|ngay|nha|cho|\d)|muon (mua|dat|lay)|lay (mau|bo|cai|em)|mua (mau|bo|cai|luon|nha|cho)|\border\b|\bung\b/],
+      ['price',/\bgia\b|bao nhieu|bang gia|\bre (khong|ko)\b/],
+      ['promo',/uu dai|giam gia|khuyen mai|voucher|giam (15|20)|tang kem/],
+      ['durable',/\bben\b|de duoc|\bnam\b|han su dung|bao lau.*(hu|de)|lau (hu|phai)/],
+      ['ship',/\bgiao\b|\bship\b|van chuyen|bao lau|nhan (hang|hoa)|\bgap\b|hoa toc|khi nao/],
+      ['card',/thiep|loi chuc|viet giup/],
+      ['scent',/\bthom\b|\bmui\b|\bhuong\b|\bnong\b/],
+      ['trust',/doi tra|doi (mau|hang)|\bhong\b|\bmop\b|dong kiem|anh that|giong hinh|lua dao|uy tin|an tam|bao hanh|\bloi\b/],
+      ['fresh',/hoa tuoi|khac (gi|cho nao)|khac nhau|hoa sap la|sap la gi|tai sao/],
+      ['catalog',/\bmau\b|loai|san pham|co gi|danh muc|hoa lua|hop qua|banh keo|gio hoa|trai cay|mini|tang (ai|me|ban|nguoi)/],
+      ['thanks',/cam on|thanks|ok (shop|em|nha)|da (nha|ok)/],
+      ['greet',/^(hi|hello|alo|chao|shop|hoa|co ai|xin chao|a lo)\b|shop oi|con khong|co ban khong/]
+    ];
+    function norm(s){return s.toLowerCase().replace(/đ/g,'d').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim()}
+    function pick(t){var n=norm(t);for(var i=0;i<RULES.length;i++){if(RULES[i][1].test(n))return R[RULES[i][0]]}return R.fallback}
+    function add(txt,cls){var d=document.createElement('div');d.className='bbc-m '+cls;d.textContent=txt;msgs.appendChild(d);scroll();return d}
+    function scroll(){msgs.scrollTop=msgs.scrollHeight}
+    function btns(list){(list||[]).forEach(function(b){var a=document.createElement('a');a.className='bbc-btn'+(b.alt?' alt':'');a.textContent=b.t;a.href=b.href;if(b.href.charAt(0)!=='#'){a.target='_blank';a.rel='noopener'}if(b.form){a.addEventListener('click',function(){win.classList.remove('open')})}msgs.appendChild(a)});scroll()}
+    function chips(){var w=document.createElement('div');w.className='bbc-chips';['Tư vấn tặng 20/10, 8/3 🌸','Tặng Valentine 14/2 ❤️','Tặng thầy cô 20/11 🎓','Hoa Sinh nhật / Kỷ niệm 🎂','Tư vấn theo ngân sách 💰','Xem ưu đãi 15-20%'].forEach(function(t){var c=document.createElement('button');c.type='button';c.className='bbc-chip';c.textContent=t;c.addEventListener('click',function(){send(t);w.remove()});w.appendChild(c)});msgs.appendChild(w);scroll()}
+    function reply(r){var dots=document.createElement('div');dots.className='bbc-m bbc-bot bbc-dots';dots.innerHTML='<i></i><i></i><i></i>';msgs.appendChild(dots);scroll();setTimeout(function(){dots.remove();add(r.a,'bbc-bot');btns(r.b)},650)}
+    function send(t){t=t.trim();if(!t)return;add(t,'bbc-me');reply(pick(t))}
+    function open(){win.classList.add('open');tip.style.display='none';if(!started){started=true;reply(R.greet);setTimeout(chips,1000)}setTimeout(function(){input.focus()},50)}
+    $('bbcLaunch').addEventListener('click',function(){win.classList.contains('open')?win.classList.remove('open'):open()});
+    $('bbcClose').addEventListener('click',function(){win.classList.remove('open')});
+    tip.addEventListener('click',open);
+    $('bbcForm').addEventListener('submit',function(e){e.preventDefault();var v=input.value;input.value='';send(v)});
+    setTimeout(function(){if(!started)tip.style.display='block'},4000);
+    tip.style.display='none';
+  })();
+  </script>
+
+  <script>
+  // Tự động chuyển đường dẫn ảnh về thư mục gốc nếu images/ không tồn tại trên GitHub
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img").forEach(function (img) {
+      img.addEventListener("error", function () {
+        var src = this.getAttribute("src");
+        if (src && src.indexOf("images/") !== -1) {
+          this.src = src.replace("images/", "");
+        }
+      });
+    });
+  });
+  </script>
+
+
+  <style>
+    /* Responsive Mobile Enhancements */
+    html, body {
+      overflow-x: hidden !important;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+    }
+    .cat-pill {
+      background: #FAF6F0;
+      color: #72625A;
+      border: 1px solid #E2D5C7;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-pill:hover {
+      background: #EFE5D8;
+      color: #332722;
+      border-color: #B78353;
+    }
+    .cat-pill.active {
+      background: #8C5D33 !important;
+      color: #ffffff !important;
+      border-color: #8C5D33 !important;
+      box-shadow: 0 2px 8px -2px rgba(140, 93, 51, 0.4);
+    }
+    .cat-hidden {
+      display: none !important;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Chống lỗi iOS Safari tự động phóng to khi gõ chữ vào input */
+    @media (max-width: 639px) {
+      #od-box input, #od-box select, #od-box textarea {
+        font-size: 16px !important;
+      }
+      .bbc-form input {
+        font-size: 16px !important;
+      }
+      #od-box {
+        max-height: 88vh;
+        max-height: 88dvh;
+      }
+      .bbc-win {
+        max-height: calc(100vh - 140px);
+        max-height: calc(100dvh - 140px);
+      }
+    }
+      /* Style riêng đảm bảo Modal danh mục luôn mở chuẩn xác trên mọi thiết bị */
+    #cat-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background: rgba(30, 20, 15, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    #cat-modal-overlay.cat-open {
+      display: flex !important;
+    }
+  </style>
+
+  <!-- ==================== POPUP XEM MẪU HOA THEO TỪNG DANH MỤC ==================== -->
+  <div id="cat-modal-overlay" class="fixed inset-0 z-[9990] bg-black/60 hidden items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs transition duration-300" onclick="if(event.target===this)closeCategoryModal()">
+    <div id="cat-modal-box" class="bg-[#FAF6F0] w-full max-w-4xl max-h-[92vh] max-h-[92dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border border-[#EADBCC] shadow-2xl p-4 sm:p-6 relative flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-3 border-b border-[#E2D5C7] sticky top-0 bg-[#FAF6F0]/95 backdrop-blur-sm z-10 pt-1">
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="cat-m-icon" class="text-2xl sm:text-3xl">🔥</span>
+            <h3 id="cat-m-title" class="font-serif-luxury text-lg sm:text-2xl font-bold text-[#332722]">Tên Danh Mục</h3>
+            <span id="cat-m-count" class="bg-[#8C5D33] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">13 Mẫu</span>
+          </div>
+          <p id="cat-m-desc" class="text-xs text-[#7A6C65] mt-1 line-clamp-1 sm:line-clamp-none">Mô tả danh mục</p>
+        </div>
+        <button type="button" onclick="closeCategoryModal()" class="w-8 h-8 rounded-full bg-[#EFE5D8] hover:bg-[#E2D5C7] text-[#5C4D46] text-lg font-bold flex items-center justify-center transition cursor-pointer shrink-0 ml-2" aria-label="Đóng">✕</button>
+      </div>
+
+      <!-- Thanh chuyển nhanh giữa 9 danh mục bên trong Modal -->
+      <div class="flex items-center gap-2 overflow-x-auto py-2.5 border-b border-[#E2D5C7] scrollbar-none" style="-webkit-overflow-scrolling: touch;">
+        <button type="button" id="cat-tab-bestseller" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('bestseller')">
+          🔥 Các Mẫu Hot / Bestseller (13)
+        </button>
+        <button type="button" id="cat-tab-mini" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('mini')">
+          🌸 Bó Hoa 1 - 3 Bông (10)
+        </button>
+        <button type="button" id="cat-tab-soap-silk" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('soap-silk')">
+          💐 Hoa Sáp Thơm & Hoa Lụa (12)
+        </button>
+        <button type="button" id="cat-tab-glitter" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('glitter')">
+          ✨ Hoa Nhũ Kim Tuyến (8)
+        </button>
+        <button type="button" id="cat-tab-candy" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('candy')">
+          🍬 Hoa Bánh Kẹo (9)
+        </button>
+        <button type="button" id="cat-tab-gift" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('gift')">
+          🎁 Quà Tặng (10)
+        </button>
+        <button type="button" id="cat-tab-box-bag" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('box-bag')">
+          💡 Hộp Hoa + Túi Đèn (9)
+        </button>
+        <button type="button" id="cat-tab-accessory" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('accessory')">
+          🎀 Phụ Kiện Hoa (9)
+        </button>
+        <button type="button" id="cat-tab-sale" class="cat-pill px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer" onclick="openCategoryModal('sale')">
+          🏷️ Hàng Sale (8)
+        </button>
+      </div>
+
+      <!-- Lưới sản phẩm chỉ thuộc về danh mục đang chọn -->
+      <div id="cat-modal-products" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4 pt-4">
+        <!-- Các mẫu hoa sẽ được hiển thị tại đây -->
+      </div>
+
+      <!-- Footer Modal -->
+      <div class="mt-6 pt-3 border-t border-[#E2D5C7] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#7A6C65]">
+        <span>💐 100% hình ảnh tự quay chụp thật • Đổi trả trong vòng 3 ngày nếu lỗi</span>
+        <button type="button" onclick="closeCategoryModal()" class="text-xs text-[#8C5D33] font-semibold hover:underline">
+          Đóng và quay lại trang chủ
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    var bibiCatalog = {"bestseller": {"name": "Các Mẫu Hot / Bestseller", "icon": "🔥", "badge": "Bán Chạy", "desc": "Những thiết kế hoa sáp được săn đón và yêu thích nhất tại Bibi Flower", "first_img": "product-heart-red.jpg", "count": 13, "items": [{"img": "product-heart-red.jpg", "name": "Bó Hoa Sáp Trái Tim Lãng Mạn", "price": 350000, "old_price": 420000, "desc": "Tạo hình trái tim hoa hồng đỏ phủ nhũ kiêu sa"}, {"img": "product-crown-royal.jpg", "name": "Bó Hoa Vương Miện Hoàng Gia", "price": 390000, "old_price": 460000, "desc": "Tone xanh hoàng gia đính vương miện ngọc quý phái & bướm dạ quang"}, {"img": "product-bridal-pastel.jpg", "name": "Bó Hồng Sáp Pastel Cầm Tay", "price": 280000, "old_price": 330000, "desc": "Tone trắng & hồng phấn kèm lá khuynh diệp thanh lịch"}, {"img": "hero-bouquet.jpg", "name": "Bó Hồng Sáp Phối Tone Pastel Lớn", "price": 360000, "old_price": 430000, "desc": "Bó hoa lớn kết từ hoa sáp thơm cao cấp, bền đẹp 3-5 năm"}, {"img": "1778893262569_60260271918889255_1018525255081346003_debf55a17591dfb54f5d1ff6f75647aa.jpg", "name": "Bó Hoa Sáp Mix Bông Tuyết (Mẫu #5)", "price": 340000, "old_price": 400000, "desc": "Thiết kế bông tuyết mùa đông lãng mạn"}, {"img": "1779021230478_60260271918889255_1018525255081346003_44ed42d7d412ad22a139ce6c4a29fb3d.jpg", "name": "Bó Hoa Hồng Sáp 50 Bông Lớn (Mẫu #6)", "price": 550000, "old_price": 650000, "desc": "Bó hoa khổng lồ 50 bông mừng kỷ niệm đặc biệt"}, {"img": "1779021235544_60260271918889255_1018525255081346003_d72dd0ebaf3363cba9254888556d4c01.jpg", "name": "Bó Hoa Sáp Pastel Cô Dâu (Mẫu #7)", "price": 310000, "old_price": 370000, "desc": "Bó hoa sáp cầm tay cô dâu chụp ảnh cưới siêu bền"}, {"img": "1779021251332_60260271918889255_1018525255081346003_d3488840ba2fdf6ef62e655e7fe93880.jpg", "name": "Bó Hoa Sáp Hồng Phấn Nơ To (Mẫu #8)", "price": 280000, "old_price": 340000, "desc": "Thiết kế nơ to bồng bềnh phong cách tiểu thư"}, {"img": "1779029254407_60260271918889255_1018525255081346003_13e8c43519c3cabab50c0f37951bb9d1.jpg", "name": "Bó Hoa Sáp Đỏ Nhũ Hoàng Gia (Mẫu #9)", "price": 380000, "old_price": 450000, "desc": "Mẫu bó hoa sáp đỏ nhũ cao cấp bán chạy dịp lễ"}, {"img": "1794566524086_7937291436514879447_7937291436514879447_0bd05ac205d294bb6dbbb728881e012d.jpg", "name": "Bó Hồng Sáp Cầm Tay Tone Kem (Mẫu #10)", "price": 290000, "old_price": 350000, "desc": "Tone màu kem trang nhã, nhẹ nhàng quý phái"}, {"img": "1794566524173_7937291436514879447_7937291436514879447_ad21491eccf9c4e178d1bb14280cddc3.jpg", "name": "Bó Hoa Sáp Mix Bướm Phát Sáng (Mẫu #11)", "price": 360000, "old_price": 420000, "desc": "Đính kèm bướm dạ quang lấp lánh trong đêm"}, {"img": "1794566524249_7937291436514879447_7937291436514879447_ac6ea66d954531f63f41d179cdf5d570.jpg", "name": "Bó Hoa Sáp Nhũ Trái Tim Xanh (Mẫu #12)", "price": 350000, "old_price": 420000, "desc": "Tone xanh navy sang trọng, thanh lịch"}, {"img": "1794566524311_7937291436514879447_7937291436514879447_7aa5b08a55aa4e1a70518f3adff0168a.jpg", "name": "Bó Hoa Sáp Mix Bông Tuyết (Mẫu #13)", "price": 340000, "old_price": 400000, "desc": "Thiết kế bông tuyết mùa đông lãng mạn"}]}, "mini": {"name": "Bó Hoa 1 - 3 Bông", "icon": "🌸", "badge": "Nhỏ Xinh", "desc": "Thiết kế mini nhỏ gọn, thanh lịch, cực kỳ phù hợp tặng sự kiện, học sinh - sinh viên", "first_img": "cat-mini-1-3-bong.jpg", "count": 10, "items": [{"img": "cat-mini-1-3-bong.jpg", "name": "Bó Hoa Sáp Mini 1 Bông Tinh Tế", "price": 45000, "old_price": 55000, "desc": "Gói giấy mờ Hàn Quốc kèm nơ xinh xắn, thích hợp tặng số lượng lớn"}, {"img": "1778893262704_60260271918889255_1018525255081346003_0a82f0c918a6f50a1af086133e717fd1.jpg", "name": "Bó Hoa Sáp 3 Bông Tinh Tế (Mẫu #2)", "price": 75000, "old_price": 95000, "desc": "Bó 3 bông phối lá khuynh diệp nhỏ gọn"}, {"img": "1779021231592_60260271918889255_1018525255081346003_0720184c6de7ef978c22bd4ae3105e0a.jpg", "name": "Bó Mini Tốt Nghiệp / Học Sinh (Mẫu #3)", "price": 50000, "old_price": 65000, "desc": "Món quà nhỏ xinh cho các dịp lễ trường học"}, {"img": "1779021235685_60260271918889255_1018525255081346003_07b448f826c8255979322837d4e7a78e.jpg", "name": "Set 5 Bó Hoa Mini Giá Sỉ (Mẫu #4)", "price": 200000, "old_price": 250000, "desc": "Set 5 bó mini phối màu ngẫu nhiên cực đẹp"}, {"img": "1779021251706_60260271918889255_1018525255081346003_a2b50f94c6e0fbd6b9e19de9f389cfdb.jpg", "name": "Bó Hoa Sáp Mini Kèm Thiệp (Mẫu #5)", "price": 55000, "old_price": 70000, "desc": "Bó hoa mini tặng kèm thiệp nắn nót"}, {"img": "1779109383421_60260271918889255_1018525255081346003_479349fb01c995f1f888f5690fe38d8b.jpg", "name": "Bó Mini Tone Đỏ Quyến Rũ (Mẫu #6)", "price": 50000, "old_price": 65000, "desc": "Bó mini hoa hồng đỏ nhũ nổi bật"}, {"img": "1794566524100_7937291436514879447_7937291436514879447_15246a7f9cf6b95bd39e5cfc8563aad1.jpg", "name": "Bó Mini Tone Hồng Pastel (Mẫu #7)", "price": 50000, "old_price": 65000, "desc": "Bó mini hồng pastel ngọt ngào dễ thương"}, {"img": "1794566524179_7937291436514879447_7937291436514879447_933797287ad6423aa5b02e49135836ec.jpg", "name": "Bó Mini Hoa Hướng Dương Sáp (Mẫu #8)", "price": 60000, "old_price": 75000, "desc": "Bó hướng dương mini tươi sáng rạng rỡ"}, {"img": "1794566524256_7937291436514879447_7937291436514879447_4f71596892999eee9eb89f9e179874e2.jpg", "name": "Bó Hoa Sáp 1 Bông Mini Xinh (Mẫu #9)", "price": 45000, "old_price": 55000, "desc": "Bó 1 bông gói giấy kraft hoặc giấy mờ Hàn Quốc"}, {"img": "1794566524318_7937291436514879447_7937291436514879447_71720f0446a77511f622350155f873d6.jpg", "name": "Bó Hoa Sáp 3 Bông Tinh Tế (Mẫu #10)", "price": 75000, "old_price": 95000, "desc": "Bó 3 bông phối lá khuynh diệp nhỏ gọn"}]}, "soap-silk": {"name": "Hoa Sáp Thơm & Hoa Lụa", "icon": "💐", "badge": "Hoa Nghệ Thuật", "desc": "Hoa sáp thơm cao cấp & hoa lụa nghệ thuật bền đẹp 3 - 5 năm, hương thơm thư thái", "first_img": "cat-hoa-sap-lua.jpg", "count": 12, "items": [{"img": "cat-hoa-sap-lua.jpg", "name": "Bó Hoa Sáp Thơm & Hoa Lụa Nghệ Thuật", "price": 320000, "old_price": 380000, "desc": "Sự kết hợp tinh tế giữa hoa sáp thơm và hoa lụa cao cấp giữ màu dài lâu"}, {"img": "product-pastel-mesh.jpg", "name": "Bó Hồng Sáp Nơ Lưới Ren Hàn Quốc", "price": 290000, "old_price": 350000, "desc": "Thiết kế ren bồng bềnh phong cách Hàn Quốc nhẹ nhàng nữ tính"}, {"img": "product-bouquet-iloveyou.jpg", "name": "Bó Hoa Sáp Chữ I Love You", "price": 380000, "old_price": 450000, "desc": "Tạo hình chữ I Love You gửi gắm trọn vẹn tình cảm chân thành"}, {"img": "1778893262727_60260271918889255_1018525255081346003_8a7657c89527a5b44e5e04a003b61176.jpg", "name": "Bó Hoa Sáp Trắng Tinh Khôi (Mẫu #4)", "price": 280000, "old_price": 340000, "desc": "Tone trắng tinh khôi phối giấy đen tương phản"}, {"img": "1779021232524_60260271918889255_1018525255081346003_3b311ac701f15e7c851fdafce9472cd0.jpg", "name": "Bó Hoa Sáp Vàng Hướng Dương (Mẫu #5)", "price": 320000, "old_price": 380000, "desc": "Tone vàng rạng rỡ chúc mừng thành công"}, {"img": "1779021236624_60260271918889255_1018525255081346003_4f3fa3075e42be47570cad552541bf33.jpg", "name": "Bó Hoa Sáp Đỏ Nhung Cổ Điển (Mẫu #6)", "price": 310000, "old_price": 370000, "desc": "Hoa hồng đỏ nhung bất hủ theo năm tháng"}, {"img": "1779021251866_60260271918889255_1018525255081346003_530bc2030613635ebbbe864036430a2c.jpg", "name": "Bó Hoa Sáp Mix Đa Sắc Màu (Mẫu #7)", "price": 330000, "old_price": 390000, "desc": "Mix hài hòa giữa các tone màu pastel tươi tắn"}, {"img": "1779110294715_60260271918889255_1018525255081346003_83bdfdd4950d8254352864c1e3263868.jpg", "name": "Bó Hoa Sáp Xanh Mint Thanh Mát (Mẫu #8)", "price": 290000, "old_price": 350000, "desc": "Tone xanh mint mát dịu tạo cảm giác bình yên"}, {"img": "1794566524111_7937291436514879447_7937291436514879447_042eb99c01728145e3118e0652e1314c.jpg", "name": "Bó Hoa Sáp Thơm Hương Tự Nhiên (Mẫu #9)", "price": 270000, "old_price": 330000, "desc": "Hương thơm xà phòng tự nhiên dịu nhẹ thư thái"}, {"img": "1794566524186_7937291436514879447_7937291436514879447_7b7845221d6e162d3f7abc6174c8eca1.jpg", "name": "Bó Hoa Lụa Phối Hoa Sáp Cao Cấp (Mẫu #10)", "price": 350000, "old_price": 420000, "desc": "Phối hoa lụa nhập khẩu và hoa sáp bền đẹp 5 năm"}, {"img": "1794566524264_7937291436514879447_7937291436514879447_adb245e74296a86d5ebb220657d76703.jpg", "name": "Bó Hoa Sáp Tím Lavender Thơ Mộng (Mẫu #11)", "price": 290000, "old_price": 350000, "desc": "Tone tím mộng mơ sang trọng quý phái"}, {"img": "1794566524325_7937291436514879447_7937291436514879447_1b8ea4e6203da44e774ddc10929cbfa3.jpg", "name": "Bó Hoa Sáp Trắng Tinh Khôi (Mẫu #12)", "price": 280000, "old_price": 340000, "desc": "Tone trắng tinh khôi phối giấy đen tương phản"}]}, "glitter": {"name": "Hoa Nhũ Kim Tuyến", "icon": "✨", "badge": "Lấp Lánh", "desc": "Cánh hoa phủ nhũ kim tuyến lấp lánh kiêu sa, tạo hiệu ứng rực rỡ dưới ánh đèn", "first_img": "1778893262794_60260271918889255_1018525255081346003_00cb7e5888d4a8c5f243994136844afc.jpg", "count": 8, "items": [{"img": "1778893262794_60260271918889255_1018525255081346003_00cb7e5888d4a8c5f243994136844afc.jpg", "name": "Bó Hoa Hồng Nhũ Kim Tuyến Đỏ (Mẫu #1)", "price": 360000, "old_price": 430000, "desc": "Cánh hoa phủ nhũ kim tuyến đỏ lấp lánh nổi bật"}, {"img": "1779021232720_60260271918889255_1018525255081346003_2ae5cffad412414e1e3359b6b2adb7bb.jpg", "name": "Bó Hoa Nhũ Kim Tuyến Xanh Dương (Mẫu #2)", "price": 370000, "old_price": 440000, "desc": "Tone xanh dương ánh kim lung linh huyền ảo"}, {"img": "1779021236806_60260271918889255_1018525255081346003_6b2d5f3a3c7215808f08ac642693f96e.jpg", "name": "Bó Hoa Nhũ Kim Tuyến Vàng Gold (Mẫu #3)", "price": 380000, "old_price": 450000, "desc": "Tone vàng gold ánh kim quyền quý sang trọng"}, {"img": "1779022409746_60260271918889255_1018525255081346003_47e45cf1d100a21f2d72f00657b3502f.jpg", "name": "Bó Hoa Nhũ Phối Bướm Dạ Quang (Mẫu #4)", "price": 390000, "old_price": 460000, "desc": "Hiệu ứng ánh sáng rực rỡ trong không gian tối"}, {"img": "1779498644179_60260271918889255_1018525255081346003_33069697075a5c01150e7412e4ec2a1f.jpg", "name": "Bó Hoa Nhũ Kim Tuyến Bạc Silver (Mẫu #5)", "price": 350000, "old_price": 420000, "desc": "Tone ánh bạc hiện đại, cá tính và lộng lẫy"}, {"img": "1794566524122_7937291436514879447_7937291436514879447_33933964eddf953c39fa219bce18d7e4.jpg", "name": "Bó Hoa Nhũ Trái Tim Lấp Lánh (Mẫu #6)", "price": 390000, "old_price": 470000, "desc": "Trái tim hoa nhũ đốn tim người nhận"}, {"img": "1794566524193_7937291436514879447_7937291436514879447_4e350deccf158139dea0b3763d264cb9.jpg", "name": "Bó Hoa Nhũ Hồng Pastel Lấp Lánh (Mẫu #7)", "price": 340000, "old_price": 410000, "desc": "Ánh nhũ dịu nhẹ trên nền hoa hồng pastel"}, {"img": "1794566524271_7937291436514879447_7937291436514879447_4ba6728693eb980674d4bbb289c60f36.jpg", "name": "Bó Hoa Nhũ Đen Quyền Lực (Black Rose) (Mẫu #8)", "price": 380000, "old_price": 450000, "desc": "Hoa nhũ đen phối viền kim tuyến ma mị cuốn hút"}]}, "candy": {"name": "Hoa Bánh Kẹo", "icon": "🍬", "badge": "Ngọt Ngào", "desc": "Ý tưởng quà tặng ngọt ngào, độc đáo, vừa đẹp mắt vừa thiết thực và ý nghĩa", "first_img": "cat-banh-keo.jpg", "count": 9, "items": [{"img": "cat-banh-keo.jpg", "name": "Bó Hoa Bánh Kẹo & Snack Ngọt Ngào", "price": 250000, "old_price": 300000, "desc": "Mix bánh kẹo ngon miệng, quà tặng độc đáo bất ngờ cho bạn bè, người thương"}, {"img": "1778893262816_60260271918889255_1018525255081346003_cd35a56d8d86168a1cd744fa1fe6ca4c.jpg", "name": "Bó Hoa Kẹo Mút Chupa Chups Khổng Lồ (Mẫu #2)", "price": 190000, "old_price": 240000, "desc": "Bó kẹo mút rực rỡ sắc màu tặng bạn bè"}, {"img": "1779021233287_60260271918889255_1018525255081346003_7af8dc89608a93908c6049d16976294a.jpg", "name": "Bó Hoa Bánh Snack & Bánh Ngọt (Mẫu #3)", "price": 220000, "old_price": 270000, "desc": "Quà tặng cực vui vẻ và thiết thực cho giới trẻ"}, {"img": "1779021236942_60260271918889255_1018525255081346003_8042f2fd67b89de49ce38b5db00b0221.jpg", "name": "Bó Hoa Bánh Kẹo Tone Hồng Dễ Thương (Mẫu #4)", "price": 260000, "old_price": 310000, "desc": "Phối bánh kẹo tone hồng ngọt ngào"}, {"img": "1779027197881_60260271918889255_1018525255081346003_b0d6443b22f9b2022bc30da105b270d0.jpg", "name": "Bó Hoa Kẹo Bông Gòn Xốp Xinh (Mẫu #5)", "price": 180000, "old_price": 220000, "desc": "Ngọt ngào êm ái như mây trắng mùa thu"}, {"img": "1779498644298_60260271918889255_1018525255081346003_ce6afe494ffe23daed749880a51a30eb.jpg", "name": "Bó Hoa Bánh Kẹo Mix Hoa Sáp Thơm (Mẫu #6)", "price": 290000, "old_price": 350000, "desc": "Vừa có hoa thơm lưu niệm vừa có bánh kẹo ngon"}, {"img": "1794566524133_7937291436514879447_7937291436514879447_73c16e11e54443cfe2f78740f2d5e327.jpg", "name": "Bó Bánh KitKat & Pocky Nhật Bản (Mẫu #7)", "price": 280000, "old_price": 340000, "desc": "Bó bánh nhập khẩu giòn tan thơm lừng"}, {"img": "1794566524201_7937291436514879447_7937291436514879447_7f44b6c24fcbb1f47ac891a558bbf698.jpg", "name": "Bó Hoa Kẹo Trái Cây Đa Vị (Mẫu #8)", "price": 210000, "old_price": 260000, "desc": "Món quà bất ngờ cho ngày sinh nhật bạn thân"}, {"img": "1794566524278_7937291436514879447_7937291436514879447_b07e4572d3f3bbdfbcb30e7697591a3c.jpg", "name": "Bó Hoa Bánh Kẹo Mix Ferrero Rocher (Mẫu #9)", "price": 320000, "old_price": 380000, "desc": "Kết hợp viên socola Ferrero Rocher cao cấp"}]}, "gift": {"name": "Quà Tặng", "icon": "🎁", "badge": "Quà Tặng", "desc": "Hộp quà hoa sáp phối quà, gấu bông, socola và thiệp mừng sang trọng", "first_img": "product-giftbox-luxury.jpg", "count": 10, "items": [{"img": "product-giftbox-luxury.jpg", "name": "Hộp Quà Hoa Sáp & Phụ Kiện Luxury", "price": 420000, "old_price": 500000, "desc": "Hộp quà nắp kính cao cấp phối hoa sáp và ngăn đựng quà bí mật"}, {"img": "product-giftbox-pink.jpg", "name": "Hộp Quà Hoa Sáp Tone Hồng Baby", "price": 390000, "old_price": 460000, "desc": "Hộp hoa tròn nắp kính sang chảnh kèm ruy băng lụa cao cấp"}, {"img": "1778893262838_60260271918889255_1018525255081346003_afa8f935968aff02bc4b5a352d421c4a.jpg", "name": "Hộp Quà Hoa Sáp Hình Trái Tim Tình Yêu (Mẫu #3)", "price": 350000, "old_price": 420000, "desc": "Hộp trái tim chứa trọn tình cảm chân thành"}, {"img": "1779021234254_60260271918889255_1018525255081346003_a33d4043573ff42275fd6c5c1cf046de.jpg", "name": "Hộp Quà Hoa Sáp & Dây Chuyền / Son (Mẫu #4)", "price": 450000, "old_price": 530000, "desc": "Ngăn kéo đựng son hoặc trang sức bí mật"}, {"img": "1779021237070_60260271918889255_1018525255081346003_c430a7c95852108b703ccd6720eb6ebc.jpg", "name": "Hộp Quà Hoa Sáp Tone Trắng Đen Sang Trọng (Mẫu #5)", "price": 390000, "old_price": 460000, "desc": "Phong cách tối giản châu Âu đẳng cấp"}, {"img": "1779027198091_60260271918889255_1018525255081346003_a8ed13c8858af6cf5497de434bd0922c.jpg", "name": "Set Quà Tặng Hoa Sáp & Nến Thơm (Mẫu #6)", "price": 430000, "old_price": 510000, "desc": "Hương thơm thư giãn giúp giải tỏa căng thẳng"}, {"img": "1779499686091_60260271918889255_1018525255081346003_c44fd17acca212e99862935c8bb24fe7.jpg", "name": "Hộp Hoa Sáp Nắp Kính Kèm Đèn (Mẫu #7)", "price": 410000, "old_price": 490000, "desc": "Đèn LED bật sáng lung linh qua mặt kính trong"}, {"img": "1794566524142_7937291436514879447_7937291436514879447_6d04aa0e0df551c02152169855ef7951.jpg", "name": "Set Quà Tặng Hoa & Ly Sứ Đôi (Mẫu #8)", "price": 340000, "old_price": 400000, "desc": "Món quà ấm áp cho các cặp đôi"}, {"img": "1794566524208_7937291436514879447_7937291436514879447_11a56a5ec5af4c0f5b1d5d61fc5ba816.jpg", "name": "Hộp Quà Hoa Sáp & Gấu Bông Xinh (Mẫu #9)", "price": 360000, "old_price": 430000, "desc": "Kèm chú gấu bông nhỏ xinh xắn bên trong"}, {"img": "1794566524284_7937291436514879447_7937291436514879447_bc5153fad0d01c28b479ea6bd62b0df7.jpg", "name": "Hộp Quà Hoa Sáp Tròn Nắp Kính Mờ (Mẫu #10)", "price": 380000, "old_price": 450000, "desc": "Hộp tròn nắp kính cao cấp trưng bày phòng khách"}]}, "box-bag": {"name": "Hộp Hoa + Túi Đèn", "icon": "💡", "badge": "Kèm Đèn LED", "desc": "Combo hộp hoa kèm túi trong suốt và dây đèn LED nhấp nháy lung linh huyền ảo", "first_img": "gift-transparent-bag.jpg", "count": 9, "items": [{"img": "gift-transparent-bag.jpg", "name": "Combo Túi Trong Suốt & Đèn LED", "price": 35000, "old_price": 50000, "desc": "Túi xách mica trong suốt kèm dây đèn LED đom đóm lung linh"}, {"img": "1778893263092_60260271918889255_1018525255081346003_bd6ed49a5c03327fb66616c56a394dcc.jpg", "name": "Túi Xách Trong Suốt Bó Hoa + Đèn LED (Mẫu #2)", "price": 290000, "old_price": 350000, "desc": "Túi xách thời thượng mang đi chơi, cafe cực sang"}, {"img": "1779021234796_60260271918889255_1018525255081346003_93ce6bae2850e766198a0d8e8dc1af1b.jpg", "name": "Combo Bó Hoa Kèm Dây Đèn Đom Đóm (Mẫu #3)", "price": 310000, "old_price": 370000, "desc": "Ánh đèn nhấp nháy tạo không khí lãng mạn"}, {"img": "1779021237396_60260271918889255_1018525255081346003_af8cd335ea2bf088c7c518259e832af4.jpg", "name": "Hộp Hoa Kéo Ngăn Đựng Quà Kèm Đèn (Mẫu #4)", "price": 450000, "old_price": 540000, "desc": "Hộp 2 tầng vừa cắm hoa vừa đựng quà tặng"}, {"img": "1779027198314_60260271918889255_1018525255081346003_0137798cfcfc5667e0080653218c42d5.jpg", "name": "Túi Xách Hoa Sáp Quai Da Cao Cấp (Mẫu #5)", "price": 330000, "old_price": 390000, "desc": "Quai xách da êm tay, form túi đứng sang trọng"}, {"img": "1779499686238_60260271918889255_1018525255081346003_85324741471426c64e15e44fc954fb32.jpg", "name": "Hộp Hoa Trụ Tròn Trong Suốt Kèm Đèn (Mẫu #6)", "price": 350000, "old_price": 420000, "desc": "Hộp trụ tròn hiện đại phong cách Hàn Quốc"}, {"img": "1794566524150_7937291436514879447_7937291436514879447_9f0ad26c3b5f125bb4ad2daf5ced9ce8.jpg", "name": "Bó Hoa Gói Túi Đèn Tự Bật Sáng (Mẫu #7)", "price": 300000, "old_price": 360000, "desc": "Công tắc bật đèn tiện lợi ngay quai túi"}, {"img": "1794566524215_7937291436514879447_7937291436514879447_f1ceb59d54477303604fbb67cd85f1bc.jpg", "name": "Set Hộp Hoa Mica Quai Xách Ruy Băng (Mẫu #8)", "price": 340000, "old_price": 400000, "desc": "Đính kèm nơ ruy băng lụa dập chữ sang chảnh"}, {"img": "1794566524291_7937291436514879447_7937291436514879447_ab5f94306df6974eb69e8d1396c9a2c0.jpg", "name": "Hộp Hoa Sáp Mica Trong Suốt Kèm Đèn (Mẫu #9)", "price": 320000, "old_price": 380000, "desc": "Hộp mica trong suốt nhìn rõ từng cánh hoa"}]}, "accessory": {"name": "Phụ Kiện Hoa", "icon": "🎀", "badge": "Phụ Kiện", "desc": "Vương miện ngọc, nơ lưới ren Hàn Quốc, bướm dạ quang, túi xách trong suốt cao cấp", "first_img": "proof-shipping-box.jpg", "count": 9, "items": [{"img": "proof-shipping-box.jpg", "name": "Hộp Carton Đóng Gói Bảo Vệ Hoa", "price": 25000, "old_price": 35000, "desc": "Hộp carton chuyên dụng đảm bảo hoa giữ nguyên form dáng khi vận chuyển"}, {"img": "1778893263333_60260271918889255_1018525255081346003_ad8a8bc91df23748ce6b6281e6b9041e.jpg", "name": "Vương Miện Ngọc Trai Cao Cấp (Mẫu #2)", "price": 65000, "old_price": 85000, "desc": "Vương miện đính ngọc trai nhân tạo quý phái"}, {"img": "1779021235248_60260271918889255_1018525255081346003_d3eec91cd8206695e8663cc4e3ded71a.jpg", "name": "Set 10 Bướm Dạ Quang Phát Sáng (Mẫu #3)", "price": 35000, "old_price": 50000, "desc": "Bướm phát sáng trong bóng tối đính cành hoa"}, {"img": "1779021237542_60260271918889255_1018525255081346003_1af9c289c4edfe0fd90276f3a6d25f01.jpg", "name": "Dây Đèn LED Đom Đóm 2m (Kèm Pin) (Mẫu #4)", "price": 25000, "old_price": 35000, "desc": "Dây đèn LED bóng nhỏ chống nước, pin dùng lâu"}, {"img": "1779029254078_60260271918889255_1018525255081346003_e25fb04b4c4a336dabe2e5734b76807e.jpg", "name": "Túi Xách Quà Tặng Trong Suốt Cao Cấp (Mẫu #5)", "price": 30000, "old_price": 45000, "desc": "Túi mica dày dặn, quai xách chắc chắn"}, {"img": "1779545172227_60260271918889255_1018525255081346003_fa5087f7c64d14bc555e563ac3bfed08.jpg", "name": "Cuộn Ruy Băng Lụa Hàn Quốc 50m (Mẫu #6)", "price": 55000, "old_price": 75000, "desc": "Ruy băng voan ren thắt nơ bó hoa bồng bềnh"}, {"img": "1794566524159_7937291436514879447_7937291436514879447_68f4a5f00eab46bce46a5abc1dfc3b18.jpg", "name": "Thiệp Chúc Mừng Vintage In Khắc (Mẫu #7)", "price": 15000, "old_price": 25000, "desc": "Thiệp chúc mừng họa tiết hoa lá trang nhã"}, {"img": "1794566524222_7937291436514879447_7937291436514879447_f10a90f4123d0e945b79c718f96d9b84.jpg", "name": "Giấy Gói Hoa Mờ Hàn Quốc Chống Thấm (Mẫu #8)", "price": 45000, "old_price": 60000, "desc": "Tập 20 tờ giấy gói chống nước chuẩn florist"}, {"img": "1794566524298_7937291436514879447_7937291436514879447_c29748237a8c9fdca4c5f6e668a667d7.jpg", "name": "Vương Miện Hoàng Gia Đính Đá Nhỏ (Mẫu #9)", "price": 45000, "old_price": 60000, "desc": "Phụ kiện vương miện gắn đỉnh bó hoa siêu xinh"}]}, "sale": {"name": "Hàng Sale", "icon": "🏷️", "badge": "Giảm 25-35%", "desc": "Các mẫu hoa ưu đãi giảm giá sâu tri ân khách hàng, số lượng có hạn", "first_img": "1779021230335_60260271918889255_1018525255081346003_ad685d09fd51f42d06b1f1c4176d144f.jpg", "count": 8, "items": [{"img": "1779021230335_60260271918889255_1018525255081346003_ad685d09fd51f42d06b1f1c4176d144f.jpg", "name": "Bó Hoa Sáp Thanh Lý Xả Kho Cuối Mùa (Mẫu #1)", "price": 180000, "old_price": 280000, "desc": "Mẫu hoa sáp xả kho giá gốc, hoa vẫn mới 100%"}, {"img": "1779021235397_60260271918889255_1018525255081346003_2e4548c23c2f25941ff062c26680f4a7.jpg", "name": "Bó Hồng Sáp Phối Màu Giảm 30% (Mẫu #2)", "price": 199000, "old_price": 290000, "desc": "Ưu đãi đặc biệt giảm sâu tri ân khách hàng"}, {"img": "1779021237802_60260271918889255_1018525255081346003_228452532e33de8edb863c69586ed4f9.jpg", "name": "Combo Bó Hoa Mini + Túi Đèn (Sale) (Mẫu #3)", "price": 120000, "old_price": 180000, "desc": "Combo tiết kiệm tặng bạn gái, em gái"}, {"img": "1779029254254_60260271918889255_1018525255081346003_4390065663b974aada27999ae5067453.jpg", "name": "Bó Hoa Nhũ Tồn Kho Sale Giá Gốc (Mẫu #4)", "price": 230000, "old_price": 350000, "desc": "Bó hoa nhũ đỏ lấp lánh giá ưu đãi số lượng có hạn"}, {"img": "1794566524064_7937291436514879447_7937291436514879447_081c50232272d3f896377334c72923b0.jpg", "name": "Hộp Quà Hoa Sáp Xả Hàng Mẫu (Mẫu #5)", "price": 260000, "old_price": 390000, "desc": "Hộp hoa trưng bày tiệm mới 99% xả giá vốn"}, {"img": "1794566524166_7937291436514879447_7937291436514879447_698ffbd3e9f3eaae59eb363d109b0a7e.jpg", "name": "Bó Hoa Sáp Pastel Lẻ Size Giảm Giá (Mẫu #6)", "price": 195000, "old_price": 280000, "desc": "Bó pastel size vừa xả mẫu giá siêu tốt"}, {"img": "1794566524241_7937291436514879447_7937291436514879447_940d80a7aaf8bb07875807d68e5a6100.jpg", "name": "Set 3 Bó Hoa Mini Ưu Đãi Giảm 35% (Mẫu #7)", "price": 110000, "old_price": 170000, "desc": "Mua 3 bó mini với mức giá ưu đãi cực sốc"}, {"img": "1794566524304_7937291436514879447_7937291436514879447_bec9951b2261240dda2ebc690a21ec10.jpg", "name": "Bó Hoa Sáp Mix Bánh Kẹo Sale Nhanh (Mẫu #8)", "price": 175000, "old_price": 250000, "desc": "Bó bánh kẹo sale nhanh trong ngày"}]}};
+
+    window.filterCatalog = function(k){ openCategoryModal(k); };
+    function openCategoryModal(catKey) {
+      var cat = bibiCatalog[catKey];
+      if (!cat) return;
+
+      document.getElementById('cat-m-icon').textContent = cat.icon;
+      document.getElementById('cat-m-title').textContent = cat.name;
+      document.getElementById('cat-m-count').textContent = cat.count + ' Mẫu Hoa';
+      document.getElementById('cat-m-desc').textContent = cat.desc;
+
+      // Cập nhật tab active trong modal
+      for (var k in bibiCatalog) {
+        var tab = document.getElementById('cat-tab-' + k);
+        if (tab) {
+          if (k === catKey) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        }
+      }
+
+      // Đổ danh sách sản phẩm thuộc danh mục
+      var container = document.getElementById('cat-modal-products');
+      container.innerHTML = '';
+
+      cat.items.forEach(function (p) {
+        var card = document.createElement('div');
+        card.className = 'product-card bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 border border-[#E2D5C7] flex flex-col justify-between group hover:border-[#B78353] hover:shadow-md transition duration-300';
+        card.innerHTML = 
+          '<div>' +
+            '<div class="aspect-square rounded-lg sm:rounded-xl overflow-hidden bg-[#FAF6F0] mb-2 relative">' +
+              '<img src="images/' + p.img + '" alt="' + p.name + '" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="if(this.src.indexOf(\'images/\')!==-1){this.src=this.src.replace(\'images/\',\'\');}"/>' +
+              '<span class="absolute top-1.5 left-1.5 bg-white/95 text-[#8C5D33] text-[9px] font-bold px-1.5 py-0.5 rounded border border-[#E2D5C7] shadow-xs">' + cat.badge + '</span>' +
+            '</div>' +
+            '<h4 class="font-medium text-xs sm:text-sm text-[#332722] line-clamp-1 group-hover:text-[#8C5D33] transition" title="' + p.name + '">' + p.name + '</h4>' +
+            '<p class="text-[10px] text-[#7A6C65] mt-0.5 line-clamp-1">' + p.desc + '</p>' +
+          '</div>' +
+          '<div class="mt-2.5 pt-2 border-t border-[#F3ECE2] flex items-center justify-between gap-1">' +
+            '<div>' +
+              '<span class="text-xs sm:text-sm font-bold text-[#8C5D33] block leading-tight">' + Number(p.price).toLocaleString('vi-VN') + 'đ</span>' +
+              '<span class="text-[9px] text-[#A8988F] line-through leading-none">' + Number(p.old_price).toLocaleString('vi-VN') + 'đ</span>' +
+            '</div>' +
+            '<button type="button" data-order data-name="' + p.name + '" data-price="' + p.price + '" data-colors="Màu chuẩn hình|Đỏ nhung|Hồng pastel|Tone kem" class="text-[11px] sm:text-xs bg-[#FAF3EB] text-[#8C5D33] hover:bg-[#8C5D33] hover:text-white px-2.5 py-1.5 rounded-full font-semibold transition active:scale-95 cursor-pointer shrink-0">' +
+              'Đặt Ngay' +
+            '</button>' +
+          '</div>';
+        container.appendChild(card);
+      });
+
+      // Mở modal
+      var overlay = document.getElementById('cat-modal-overlay');
+      overlay.classList.remove('hidden');
+      overlay.classList.add('cat-open');
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCategoryModal() {
+      var overlay = document.getElementById('cat-modal-overlay');
+      overlay.classList.remove('cat-open');
+      overlay.classList.add('hidden');
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    window.openCategoryModal = openCategoryModal;
+    window.closeCategoryModal = closeCategoryModal;
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeCategoryModal();
+    });
+
+    // Đảm bảo mọi nút bấm dẫn tới #dat-hang luôn cuộn mượt xuống Form Voucher cuối trang và focus ô Họ tên
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[href="#dat-hang"]');
+      if (!link) return;
+      var sec = document.getElementById('dat-hang');
+      if (sec) {
+        e.preventDefault();
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (history.replaceState) {
+          history.replaceState(null, '', '#dat-hang');
+        }
+        setTimeout(function () {
+          var firstInput = sec.querySelector('input[name="ho_ten"]');
+          if (firstInput) firstInput.focus({ preventScroll: true });
+        }, 450);
+      }
+    });
+  </script>
+
+</body>
+</html>

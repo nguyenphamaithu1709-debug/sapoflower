@@ -1,0 +1,4 @@
+/admin         /admin.html       200
+/admin/*       /admin.html       200
+/thanh-toan    /index.html       200
+/thanh-toan/*  /index.html       200
