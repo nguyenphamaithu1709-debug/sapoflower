@@ -319,8 +319,70 @@
   var TABS = [
     { key: "products", label: "Sản phẩm", singular: "sản phẩm" },
     { key: "customers", label: "Khách hàng", singular: "khách hàng" },
-    { key: "orders", label: "Đơn hàng", singular: "đơn hàng" }
+    { key: "orders", label: "Đơn hàng", singular: "đơn hàng" },
+    { key: "catalog", label: "Ảnh & Danh Mục Web", singular: "mẫu hoa lên Web" }
   ];
+
+  var GH_OWNER = "nguyenphamaithu1709-debug";
+  var GH_REPO = "sapoflower";
+  var catalogData = null;
+  var selectedCat = "bestseller";
+
+  function ghToken() { return localStorage.getItem("sapo_gh_token") || ""; }
+  function b64EncodeUnicode(str) {
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+  function loadCatalogJson() {
+    var base = isLocalApi ? "/catalog.json" : "../catalog.json";
+    return fetch("catalog.json?t=" + Date.now()).then(function (r) {
+      if (!r.ok) return fetch(base + "?t=" + Date.now()).then(function (r2) { return r2.json(); });
+      return r.json();
+    }).then(function (d) { catalogData = d; return d; }).catch(function () { return null; });
+  }
+  function ghRequest(path, method, body) {
+    var tok = ghToken();
+    if (!tok) return Promise.reject(new Error("Bạn chưa nhập GitHub Token ở khung phía trên!"));
+    var opt = {
+      method: method || "GET",
+      headers: {
+        "Authorization": "Bearer " + tok,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json"
+      }
+    };
+    if (body) opt.body = JSON.stringify(body);
+    return fetch("https://api.github.com/repos/" + GH_OWNER + "/" + GH_REPO + "/contents/" + path, opt)
+      .then(function (r) {
+        return r.json().then(function (j) {
+          if (!r.ok) throw new Error(j.message || "Lỗi GitHub API (" + r.status + ")");
+          return j;
+        });
+      });
+  }
+  function ghUploadImage(file) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var b64 = String(reader.result || "").split(",")[1];
+        var cleanName = Date.now() + "_" + file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+        ghRequest("images/" + cleanName, "PUT", {
+          message: "Upload product image " + cleanName,
+          content: b64
+        }).then(function () { resolve(cleanName); }).catch(reject);
+      };
+      reader.onerror = function () { reject(new Error("Không đọc được file ảnh")); };
+      reader.readAsDataURL(file);
+    });
+  }
+  function ghSaveCatalog(msg) {
+    return ghRequest("catalog.json", "GET").then(function (info) {
+      return ghRequest("catalog.json", "PUT", {
+        message: msg || "Update catalog.json via Admin",
+        content: b64EncodeUnicode(JSON.stringify(catalogData, null, 2)),
+        sha: info.sha
+      });
+    });
+  }
 
   function renderTabs() {
     var c = $("tabs"); c.innerHTML = "";
@@ -341,12 +403,82 @@
     var list = $("list");
     var items = state[current] || [];
 
+    if (current === "catalog") {
+      if (!catalogData) {
+        list.innerHTML = '<div class="empty">Đang tải danh mục ảnh từ web...</div>';
+        loadCatalogJson().then(function () { render(); });
+        return;
+      }
+      var tokSaved = !!ghToken();
+      var catKeys = Object.keys(catalogData);
+      if (!catalogData[selectedCat] && catKeys.length) selectedCat = catKeys[0];
+      var catObj = catalogData[selectedCat] || { items: [] };
+      var catOptions = catKeys.map(function (k) {
+        return '<option value="' + esc(k) + '"' + (k === selectedCat ? ' selected' : '') + '>' + esc(catalogData[k].name + ' (' + catalogData[k].items.length + ')') + '</option>';
+      }).join("");
+
+      var topBox = '<div style="padding:14px 16px;background:#FAF6F0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">' +
+        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
+          '<b style="font-size:13px;">Danh mục trên Web:</b>' +
+          '<select id="cat-select" style="width:auto;min-width:220px;padding:7px 10px;">' + catOptions + '</select>' +
+        '</div>' +
+        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
+          '<input id="gh-tok-in" type="password" placeholder="Dán GitHub Token (github_pat_...)" value="' + esc(ghToken()) + '" style="width:240px;padding:7px 10px;font-size:12px;">' +
+          '<button class="btn ghost sm" id="gh-tok-save" type="button">' + (tokSaved ? '✓ Đã lưu Token' : 'Lưu Token') + '</button>' +
+        '</div>' +
+      '</div>';
+
+      var rowsHtml = '<table><thead><tr><th>Ảnh</th><th>Tên mẫu hoa</th><th class="num">Giá bán</th><th class="num">Giá gốc</th><th>Mô tả</th><th class="act">Thao tác</th></tr></thead><tbody>';
+      (catObj.items || []).forEach(function (it, idx) {
+        var imgSrc = (isLocalApi ? "/images/" : "../images/") + it.img;
+        rowsHtml += '<tr>' +
+          '<td><img src="' + esc(imgSrc) + '" onerror="this.src=\'images/' + esc(it.img) + '\'" style="width:48px;height:48px;object-fit:cover;border-radius:8px;border:1px solid var(--line);"></td>' +
+          '<td><b>' + esc(it.name) + '</b><div class="sub muted">' + esc(it.img) + '</div></td>' +
+          '<td class="num"><b>' + money(it.price) + '</b></td>' +
+          '<td class="num muted">' + money(it.old_price || 0) + '</td>' +
+          '<td><div class="desc">' + esc(it.desc || "") + '</div></td>' +
+          '<td class="act"><button class="btn ghost sm" data-cat-edit="' + idx + '">Sửa / Thay ảnh</button><button class="btn danger sm" data-cat-del="' + idx + '">Xóa</button></td>' +
+        '</tr>';
+      });
+      list.innerHTML = topBox + rowsHtml + '</tbody></table>';
+      $("cat-select").onchange = function () { selectedCat = this.value; render(); };
+      $("gh-tok-save").onclick = function () {
+        localStorage.setItem("sapo_gh_token", $("gh-tok-in").value.trim());
+        toast("Đã lưu GitHub Token vào trình duyệt!");
+        render();
+      };
+      return;
+    }
+
     if (!items.length) {
       list.innerHTML = '<div class="empty">Chưa có ' + esc(curTab.singular) + ' nào. Bấm <b>"+ Thêm ' + esc(curTab.singular) + '"</b> để tạo mới!</div>';
       return;
     }
 
-    if (current === "products") {
+    if (current === "catalog") {
+      var catItems = (catalogData && catalogData[selectedCat] && catalogData[selectedCat].items) || [];
+      var it = (editing && editing._catIdx != null) ? editing : { name: "", price: 290000, old_price: 350000, desc: "", img: "" };
+      var curImgUrl = it.img ? ((isLocalApi ? "/images/" : "../images/") + it.img) : "";
+      f.innerHTML =
+        '<label>Tên mẫu hoa *</label><input name="name" value="' + esc(it.name) + '" required>' +
+        '<div class="row">' +
+          '<div><label>Giá bán (VNĐ) *</label><input name="price" type="number" min="0" step="1000" value="' + esc(it.price) + '" required></div>' +
+          '<div><label>Giá gốc gạch ngang (VNĐ)</label><input name="old_price" type="number" min="0" step="1000" value="' + esc(it.old_price || 0) + '"></div>' +
+        '</div>' +
+        '<label>Mô tả ngắn</label><textarea name="desc">' + esc(it.desc || "") + '</textarea>' +
+        '<label>Chọn ảnh từ máy tính / điện thoại (để thay hoặc thêm mới)</label>' +
+        '<input type="file" id="f-img-file" accept="image/*" style="padding:8px;">' +
+        '<input type="hidden" name="img" id="f-img-name" value="' + esc(it.img || "") + '">' +
+        (curImgUrl ? '<div style="margin-top:8px;"><img id="f-img-prev" src="' + esc(curImgUrl) + '" style="width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line);"></div>' : '<div style="margin-top:8px;"><img id="f-img-prev" style="display:none;width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line);"></div>') +
+        '<div class="hint">Khi bấm Lưu, ảnh sẽ tự đẩy thẳng lên GitHub Pages và cập nhật lên trang chủ sau ~30 giây.</div>';
+      $("f-img-file").onchange = function () {
+        var file = this.files && this.files[0];
+        if (!file) return;
+        var prev = $("f-img-prev");
+        prev.src = URL.createObjectURL(file);
+        prev.style.display = "block";
+      };
+    } else if (current === "products") {
       var h = '<table><thead><tr><th>ID</th><th>Tên hoa / Mẫu quà</th><th>Phân loại</th><th class="num">Giá bán</th><th class="num">Tồn kho</th><th>Mô tả chi tiết</th><th class="act">Thao tác</th></tr></thead><tbody>';
       items.forEach(function (p) {
         var st = p.type === "physical" ? (p.stock === 0 ? '<span class="stock-0">Hết hàng (0)</span>' : p.stock) : '<span class="muted">Không áp dụng</span>';
@@ -395,14 +527,37 @@
   }
 
   // Form modal
-  function openModal(id) {
-    editing = id ? byId(state[current], id) : null;
+  function openModal(id, preset) {
+    editing = preset || (id ? byId(state[current], id) : null);
     var curTab = TABS.filter(function (t) { return t.key === current; })[0];
     $("mtitle").textContent = (editing ? "Sửa " : "Thêm mới ") + curTab.singular;
     $("err").style.display = "none";
     var f = $("fields");
 
-    if (current === "products") {
+    if (current === "catalog") {
+      var catItems = (catalogData && catalogData[selectedCat] && catalogData[selectedCat].items) || [];
+      var it = (editing && editing._catIdx != null) ? editing : { name: "", price: 290000, old_price: 350000, desc: "", img: "" };
+      var curImgUrl = it.img ? ((isLocalApi ? "/images/" : "../images/") + it.img) : "";
+      f.innerHTML =
+        '<label>Tên mẫu hoa *</label><input name="name" value="' + esc(it.name) + '" required>' +
+        '<div class="row">' +
+          '<div><label>Giá bán (VNĐ) *</label><input name="price" type="number" min="0" step="1000" value="' + esc(it.price) + '" required></div>' +
+          '<div><label>Giá gốc gạch ngang (VNĐ)</label><input name="old_price" type="number" min="0" step="1000" value="' + esc(it.old_price || 0) + '"></div>' +
+        '</div>' +
+        '<label>Mô tả ngắn</label><textarea name="desc">' + esc(it.desc || "") + '</textarea>' +
+        '<label>Chọn ảnh từ máy tính / điện thoại (để thay hoặc thêm mới)</label>' +
+        '<input type="file" id="f-img-file" accept="image/*" style="padding:8px;">' +
+        '<input type="hidden" name="img" id="f-img-name" value="' + esc(it.img || "") + '">' +
+        (curImgUrl ? '<div style="margin-top:8px;"><img id="f-img-prev" src="' + esc(curImgUrl) + '" style="width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line);"></div>' : '<div style="margin-top:8px;"><img id="f-img-prev" style="display:none;width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line);"></div>') +
+        '<div class="hint">Khi bấm Lưu, ảnh sẽ tự đẩy thẳng lên GitHub Pages và cập nhật lên trang chủ sau ~30 giây.</div>';
+      $("f-img-file").onchange = function () {
+        var file = this.files && this.files[0];
+        if (!file) return;
+        var prev = $("f-img-prev");
+        prev.src = URL.createObjectURL(file);
+        prev.style.display = "block";
+      };
+    } else if (current === "products") {
       var p = editing || { name: "", type: "physical", price: 280000, stock: 20, description: "" };
       f.innerHTML = '<label>Tên mẫu hoa / sản phẩm *</label><input name="name" id="f-name" value="' + esc(p.name) + '" required>' +
         '<div class="row"><div><label>Phân loại</label><select name="type" id="f-type">' +
@@ -501,6 +656,26 @@
   };
 
   document.addEventListener("click", function (e) {
+    var catEdit = e.target.getAttribute("data-cat-edit");
+    if (catEdit !== null) {
+      var idx = Number(catEdit);
+      var item = Object.assign({ _catIdx: idx }, catalogData[selectedCat].items[idx]);
+      openModal(null, item);
+      $("mtitle").textContent = "Sửa / Thay ảnh mẫu hoa";
+      return;
+    }
+    var catDel = e.target.getAttribute("data-cat-del");
+    if (catDel !== null) {
+      if (!confirm("Xóa mẫu hoa này khỏi trang chủ Web?")) return;
+      var dIdx = Number(catDel);
+      catalogData[selectedCat].items.splice(dIdx, 1);
+      catalogData[selectedCat].count = catalogData[selectedCat].items.length;
+      toast("Đang cập nhật lên GitHub...", false);
+      ghSaveCatalog("Remove item from " + selectedCat)
+        .then(function () { toast("Đã xóa & cập nhật lên Web (chờ ~30s)!"); render(); })
+        .catch(function (err) { toast(err.message, true); });
+      return;
+    }
     var editId = e.target.getAttribute("data-edit");
     if (editId) { openModal(Number(editId)); return; }
     var delId = e.target.getAttribute("data-del");
@@ -527,6 +702,47 @@
     var obj = {};
     fd.forEach(function (v, k) { obj[k] = v; });
     $("err").style.display = "none";
+
+    if (current === "catalog") {
+      var btnCat = $("save");
+      btnCat.disabled = true;
+      var fileInput = $("f-img-file");
+      var newFile = fileInput && fileInput.files && fileInput.files[0];
+      if (!editing && !newFile && !obj.img) {
+        $("err").textContent = "Vui lòng chọn 1 file ảnh từ máy tính hoặc điện thoại.";
+        $("err").style.display = "block";
+        btnCat.disabled = false;
+        return;
+      }
+      var uploadStep = newFile ? ghUploadImage(newFile) : Promise.resolve(obj.img);
+      toast("Đang tải ảnh & lưu lên GitHub...", false);
+      uploadStep.then(function (imgFileName) {
+        var newItem = {
+          img: imgFileName,
+          name: obj.name.trim(),
+          price: Number(obj.price || 0),
+          old_price: Number(obj.old_price || 0),
+          desc: (obj.desc || "").trim()
+        };
+        if (editing && editing._catIdx != null) {
+          catalogData[selectedCat].items[editing._catIdx] = newItem;
+        } else {
+          catalogData[selectedCat].items.unshift(newItem);
+        }
+        catalogData[selectedCat].count = catalogData[selectedCat].items.length;
+        return ghSaveCatalog("Update " + selectedCat + " via /admin");
+      }).then(function () {
+        closeModal();
+        toast("Đã đăng lên Web thành công! (GitHub Pages cập nhật sau ~30s)");
+        render();
+      }).catch(function (err) {
+        $("err").textContent = err.message;
+        $("err").style.display = "block";
+      }).finally(function () {
+        btnCat.disabled = false;
+      });
+      return;
+    }
 
     if (isLocalApi) {
       var btn = $("save");
@@ -566,7 +782,7 @@
   // Khởi chạy & tự động làm mới mỗi 5 giây
   loadAll();
   setInterval(function () {
-    if (!$("ov").classList.contains("open")) {
+    if (!$("ov").classList.contains("open") && current !== "catalog") {
       loadAll();
     }
   }, 5000);
