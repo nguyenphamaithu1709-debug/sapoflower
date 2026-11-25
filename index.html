@@ -1826,5 +1826,109 @@
     });
   </script>
 
+  <!-- ==================== BIBI CHATBOT WIDGET (24/7 CLOUDFLARE WORKER) ==================== -->
+  <style>
+    #bibi-fab {
+      position: fixed; right: 18px; bottom: 18px; z-index: 9998;
+      background: #B78353; color: #fff; border: none; border-radius: 999px;
+      padding: 12px 18px; font-weight: 700; font-size: 14px; cursor: pointer;
+      box-shadow: 0 8px 24px rgba(51,39,34,0.22); display: flex; align-items: center; gap: 8px;
+      font-family: inherit;
+    }
+    #bibi-fab:hover { background: #A16F41; }
+    #bibi-box {
+      position: fixed; right: 18px; bottom: 76px; z-index: 9999;
+      width: 340px; max-width: calc(100vw - 24px); height: 460px; max-height: calc(100vh - 100px);
+      background: #fff; border: 1px solid #EADBCC; border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(51,39,34,0.22); display: none; flex-direction: column; overflow: hidden;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    #bibi-box.open { display: flex; }
+    .bibi-hd {
+      background: #332722; color: #fff; padding: 12px 14px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .bibi-msgs {
+      flex: 1; overflow-y: auto; padding: 12px; background: #FAF6F0;
+      display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; line-height: 1.5;
+    }
+    .bibi-m { max-width: 85%; padding: 9px 12px; border-radius: 12px; white-space: pre-wrap; word-break: break-word; }
+    .bibi-m.bot { align-self: flex-start; background: #fff; color: #332722; border: 1px solid #EADBCC; }
+    .bibi-m.user { align-self: flex-end; background: #B78353; color: #fff; }
+    .bibi-ft {
+      display: flex; gap: 6px; padding: 10px; background: #fff; border-top: 1px solid #EADBCC;
+    }
+    .bibi-ft input {
+      flex: 1; border: 1px solid #EADBCC; border-radius: 10px; padding: 8px 10px; font-size: 13.5px; outline: none;
+    }
+    .bibi-ft button {
+      background: #B78353; color: #fff; border: none; border-radius: 10px; padding: 8px 14px; font-weight: 700; cursor: pointer;
+    }
+  </style>
+  <button id="bibi-fab" type="button">💐 Chat với BiBi</button>
+  <div id="bibi-box" aria-label="Chat với BiBi">
+    <div class="bibi-hd">
+      <div>
+        <div style="font-weight:700;font-size:14px;">BiBi • Tư vấn Soap Flower</div>
+        <div style="font-size:11px;opacity:.85;">Online 24/7 • <a href="https://zalo.me/0345573574" target="_blank" style="color:#F3D9B1;text-decoration:underline;">Zalo 0345573574</a></div>
+      </div>
+      <button id="bibi-close" type="button" style="background:none;border:none;color:#fff;font-size:20px;cursor:pointer;line-height:1;">×</button>
+    </div>
+    <div class="bibi-msgs" id="bibi-msgs">
+      <div class="bibi-m bot">Dạ Bibi Flower xin chào khách ơi 💐 Khách đang tìm hoa tặng dịp gì hay tầm giá bao nhiêu để em BiBi tư vấn cho lẹ ạ?</div>
+    </div>
+    <form class="bibi-ft" id="bibi-form">
+      <input id="bibi-in" type="text" placeholder="Nhắn hỏi BiBi (vd: bó 250k...)" autocomplete="off" required>
+      <button type="submit" id="bibi-send">Gửi</button>
+    </form>
+  </div>
+  <script>
+    (function () {
+      var API = "https://soapflower-chat.nguyenphamaithu1709.workers.dev/";
+      var box = document.getElementById("bibi-box");
+      var fab = document.getElementById("bibi-fab");
+      var closeBtn = document.getElementById("bibi-close");
+      var msgs = document.getElementById("bibi-msgs");
+      var form = document.getElementById("bibi-form");
+      var input = document.getElementById("bibi-in");
+      var history = [];
+
+      fab.onclick = function () { box.classList.toggle("open"); if (box.classList.contains("open")) input.focus(); };
+      closeBtn.onclick = function () { box.classList.remove("open"); };
+
+      function append(role, text) {
+        var d = document.createElement("div");
+        d.className = "bibi-m " + role;
+        d.textContent = text;
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+        return d;
+      }
+
+      form.onsubmit = function (e) {
+        e.preventDefault();
+        var q = input.value.trim();
+        if (!q) return;
+        input.value = "";
+        append("user", q);
+        history.push({ role: "user", content: q });
+        var wait = append("bot", "BiBi đang gõ...");
+        fetch(API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: history })
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            var ans = (d && d.reply) || "Dạ khách nhắn Zalo 0345573574 giúp em nhé!";
+            wait.textContent = ans;
+            history.push({ role: "assistant", content: ans });
+          })
+          .catch(function () {
+            wait.textContent = "Dạ mạng hơi chậm, khách nhắn Zalo 0345573574 giúp em nhé!";
+          });
+      };
+    })();
+  </script>
 </body>
 </html>
